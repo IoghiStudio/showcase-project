@@ -1,0 +1,37 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.video-modal {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &__video {
+    background-color: #fff;
+    width: 300px;
+    height: 169px;
+    border-radius: 10px;
+
+    @include onTabletSmall {
+      width: 420px;
+      height: 236px;
+    }
+
+    @include onTablet {
+      width: 600px;
+      height: 338px;
+    }
+
+    @include onDesktop {
+      width: 800px;
+      height: 450px;
+    }
+  }
+}

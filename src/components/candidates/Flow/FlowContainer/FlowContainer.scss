@@ -1,0 +1,159 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.flow-container {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 18px;
+    font-size: 22px;
+    line-height: 26px;
+    font-family: $monserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 28px;
+      line-height: 34px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    line-height: 22px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    min-height: 44px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      flex-direction: row;
+    }
+  }
+
+  &__children {
+    @include onLaptop {
+      width: 62%;
+    }
+
+    &--full {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    order: -1;
+    padding-bottom: 18px;
+    margin-bottom: 28px;
+    border-bottom: 2px solid $white-gray;
+
+    @include onLaptop {
+      position: relative;
+      top: -20px;
+      width: 38%;
+      order: 1;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      padding-left: 30px;
+      border-left: 2px solid $white-gray;
+    }
+
+    @include onDesktop {
+      padding-left: 40px;
+    }
+
+    &-image {
+      align-self: center;
+      margin-bottom: 12px;
+      display: flex;
+      @include square(150px);
+      @include icon;
+
+      @include onLaptop {
+        margin-bottom: 18px;
+      }
+
+      &--info {
+        background-image: url('../../../../media/candidatesFlow/check-information.svg');
+      }
+
+      &--residency {
+        background-image: url('../../../../media/candidatesFlow/residency-address.svg');
+      }
+
+      &--experience {
+        background-image: url('../../../../media/candidatesFlow/work-experience.svg');
+      }
+
+      &--education {
+        background-image: url('../../../../media/candidatesFlow/education.svg');
+      }
+
+      &--courses {
+        background-image: url('../../../../media/candidatesFlow/courses.svg');
+      }
+
+      &--certifications {
+        background-image: url('../../../../media/candidatesFlow/certification.svg');
+      }
+
+      &--languages {
+        background-image: url('../../../../media/candidatesFlow/languages.svg');
+      }
+
+      &--driving {
+        background-image: url('../../../../media/candidatesFlow/driving-license.svg');
+      }
+
+      &--picture {
+        background-image: url('../../../../media/candidatesFlow/profile-image.svg');
+      }
+
+      &--video {
+        background-image: url('../../../../media/candidatesFlow/video-presentation.svg');
+      }
+
+      &--add-job {
+        background-image: url('../../../../media/candidatesFlow/first-job.svg');
+      }
+
+      &--relocation {
+        background-image: url('../../../../media/candidatesFlow/relocation.svg');
+      }
+
+      &--skills {
+        background-image: url('../../../../media/candidatesFlow/about-skills.svg');
+      }
+
+      &--about {
+        background-image: url('../../../../media/candidatesFlow/about-me.svg');
+      }
+    }
+
+    &-texts {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-text {
+      margin-bottom: 12px;
+      text-indent: 40px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+
+      @include onLaptop {
+        margin-bottom: 18px;
+      }
+    }
+  }
+}

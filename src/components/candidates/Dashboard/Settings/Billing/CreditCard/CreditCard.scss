@@ -1,0 +1,56 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.credit-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+    border-bottom: 1px solid $white-gray-2;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 13px;
+  }
+
+  &__text-sm {
+    font-size: 12px;
+  }
+
+  &__number {
+    margin-left: 4px;
+    font-weight: 700;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: $dashboard-padding;
+
+    &-line {
+      margin-right: 4px;
+      font-size: 12px;
+      color: $gray;
+      font-style: italic;
+      line-height: 100%;
+    }
+  }
+
+  &__stripe {
+    position: relative;
+    top: -2px;
+    font-size: 20px;
+    line-height: 100%;
+    color: $gray;
+    font-weight: 800;
+  }
+}

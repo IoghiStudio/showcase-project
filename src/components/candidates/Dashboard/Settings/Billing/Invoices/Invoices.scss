@@ -1,0 +1,145 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.invoices {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: $dashboard-padding;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $white-gray-2;
+    padding: 12px $dashboard-padding;
+
+    @media (min-width: 1800px) {
+      flex-direction: row;;
+      justify-content: space-between;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 1800px) {
+        order: -1;
+        position: static;
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: flex-start;
+      align-self: flex-end;
+      margin-top: 2px;
+
+      @media (min-width: 1800px) {
+        align-self: auto;
+        margin: 0;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    font-family: $monserrat;
+
+    &--green {
+      color: $green;
+    }
+
+    &--red {
+      color: $red;
+    }
+
+    &--blue {
+      color: $blue;
+    }
+
+    &--it {
+      font-style: italic;
+    }
+
+    &--bold {
+      font-weight: 800;
+    }
+
+    &--price {
+      font-weight: 700;
+    }
+  }
+
+  &__pair {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 8px;
+
+    @media (min-width: 360px) {
+      margin-right: 16px;
+    }
+
+    @media (min-width: 380px) {
+      margin-right: 26px;
+    }
+
+    @media (min-width: 400px) {
+      margin-right: 32px;
+    }
+
+    @include onTabletSmall {
+      margin-right: 40px;
+    }
+
+    @include onDesktop {
+      margin-right: 28px;
+    }
+
+    @include onDesktopLarge{
+      margin-right: 44px;
+    }
+
+    &--invoice {
+      width: 105px;
+      margin-right: 0;
+    }
+  }
+
+  &__download {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    width: 80px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-size: 12px;
+    color: $blue;
+    border: 1px solid $blue;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $blue;
+      color: #fff;
+    }
+
+    @media (min-width: 1800px) {
+      position: static;
+      align-self: center;
+      margin-right: 40px;
+    }
+  }
+}

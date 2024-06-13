@@ -1,0 +1,668 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.search-workers {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      flex-direction: row;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+
+    @media (min-width: 850px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__top-filters {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+
+    @include onTabletSmall {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+  }
+
+  &__top-filter {
+    padding: 4px 4px;
+    font-size: 15px;
+    margin-right: 12px;
+    color: $gray;
+    font-family: $monserrat;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    @include onTabletSmall {
+      margin-bottom: 0;
+    }
+
+    &--active {
+      color: $black;
+      font-weight: 600;
+    }
+
+    @include onTablet {
+      margin-right: 30px;
+      padding: 4px 8px;
+    }
+  }
+
+  &__filter {
+    margin-bottom: $dashboard-margin;
+    height: max-content;
+
+    @include onLaptop {
+      margin: 0;
+      order: 2;
+      width: 35%;
+    }
+  }
+
+  &__workers {
+    height: max-content;
+    @include onLaptop {
+      margin-right: $dashboard-margin;
+      width: 65%;
+    }
+
+    &--applicants {
+      @include onLaptop {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+
+  &__clear {
+    position: absolute;
+    top: 6px;
+    right: 0;
+    cursor: pointer;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 10px;
+    border: 1px solid $gray;
+    padding: 0 6px;
+    font-family: $monserrat;
+    color: $gray;
+    font-weight: 300;
+
+    &:hover {
+      background-color: $gray;
+      color: #fff;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+    border-bottom: 1px solid $white-gray;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    padding: $dashboard-padding;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    font-family: $monserrat;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 160px;
+    height: 40px;
+    border: 1px solid $blue;
+    color: $blue;
+  }
+
+  &__experience {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    height: 42px;
+
+    &-input {
+      height: 100%;
+      width: 50%;
+      margin-right: 4px;
+      background-color: $white-gray;
+      padding: 0 10px;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border: 0;
+
+      @include onTabletSmall {
+        padding: 0 16px;
+      }
+
+      &--error {
+        border: 1px solid $red;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-size: 12px;
+        font-weight: 400;
+        font-family: $monserrat;
+        font-style: italic;
+        color: rgb(170, 170, 170);
+      }
+    }
+
+    &-text {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      padding: 0 10px;
+      border: 1px solid $white-gray;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+
+      @include onLaptop {
+        padding: 0 16px;
+      }
+    }
+  }
+
+  &__checks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto 0;
+    width: 100%;
+  }
+
+  &__check {
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
+
+    &:last-child{
+      margin: 0;
+    }
+
+    &-text {
+      position: relative;
+      bottom: 1px;
+      font-size: 14px;
+    }
+  }
+}
+
+.workers {
+  display: flex;
+  flex-direction: column;
+
+  &__tag {
+    position: absolute;
+    top: 20px;
+    right: 2px;
+    margin-right: 20px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 16px;
+    border-radius: 12px;
+    background-color: $green;
+    color: #fff;
+    font-family: $monserrat;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+
+    @media (min-width: 1800px) {
+      position: static;
+    }
+
+    @media (min-width: 1900px) {
+      margin-right: 60px;
+    }
+
+    &--offer-sent {
+      color: $blue;
+      background-color: #fff;
+      border: 1px solid $blue;
+    }
+
+    &--new {
+      color: $green;
+      background-color: #fff;
+      border: 1px solid $green;
+    }
+
+    &--rejected {
+      background-color: $red;
+    }
+  }
+
+  &__top {
+    padding: $dashboard-padding;
+  }
+
+  &__count {
+    color: $gray;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__received-on {
+    margin-top: 10px;
+    font-size: 12px;
+    color: $gray;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 18px $dashboard-padding;
+    border-bottom: 1px solid $white-gray;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $white-gray-2;
+    }
+
+    @media (min-width: 1800px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+
+      &-top {
+        display: flex;
+      }
+
+      @include onTablet {
+        flex-direction: row;
+      }
+
+      &--applicants {
+        @include onTablet {
+          flex-direction: column;
+        }
+      }
+    }
+
+    &-mid {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      font-family: $monserrat;
+      padding: 16px 0;
+
+      @include onTabletSmall {
+        padding-bottom: 4px;
+      }
+
+      @include onTablet {
+        flex-direction: row;
+      }
+
+      &-pair {
+        &-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 12px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          @include onTabletSmall {
+            flex-direction: row;
+          }
+
+          @include onTablet {
+            flex-direction: column;
+            margin-bottom: 0;
+          }
+        }
+
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        width: 162px;
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        @include onTabletSmall {
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &-text {
+        font-size: 12px;
+        font-weight: 400;
+
+        &--bold {
+          font-weight: 600;
+        }
+      }
+    }
+
+    &-right  {
+      align-self: flex-end;
+      display: flex;
+      align-items: center;
+
+      @media (min-width: 1800px) {
+        align-self: auto;
+      }
+    }
+
+    &-icons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 209px;
+
+      &--jobs {
+        width: 100px;
+      }
+    }
+
+    &-icon {
+      flex-shrink: 0;
+      margin-right: 26px;
+      @include square(26px);
+      @include icon;
+      cursor: pointer;
+
+      &--favorite {
+        margin-left: 1px;
+        margin-right: 28px;
+        @include square(24px);
+        background-image: url('../../../../media/dashboard-icons/star-empty-icon-gray.png');
+
+        &--active {
+          margin-left: 0;
+          margin-right: 27px;
+          @include square(26px);
+          background-image: url('../../../../media/dashboard-icons/star-icon-gray.png');
+        }
+      }
+
+      &--video {
+        margin-right: 30px;
+        @include square(22px);
+        background-image: url('../../../../media/dashboard-icons/video-camera-icon-gray.png');
+      }
+
+      &--message {
+        margin-right: 30px;
+        @include square(22px);
+        background-image: url('../../../../media/dashboard-icons/message-icon-gray.png');
+      }
+
+      &--cv {
+        margin-right: 30px;
+        @include square(22px);
+        background-image: url('../../../../media/dashboard-icons/cv-download-icon-gray.png');
+      }
+    }
+  }
+
+  &__menu {
+    position: relative;
+    cursor: pointer;
+
+    &-dropdown {
+      position: absolute;
+      right: 0;
+      top: 38px;
+      display: none;
+
+      &--active {
+        display: flex;
+      }
+    }
+  }
+
+  &__picture {
+    &-container {
+      position: relative;
+      order: 2;
+      margin-top: 6px;
+
+      @include onTabletSmall {
+        order: 0;
+        margin: 0;
+      }
+
+      &--applicant {
+        order: 0;
+        margin: 0;
+      }
+    }
+
+    margin-right: 16px;
+    @include circle(44px);
+    @include image;
+    background-color: $white-gray-2;
+  }
+
+  &__promoted {
+    &-container {
+      position: absolute;
+      bottom: -1px;
+      right: 12px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include circle(14px);
+    font-size: 10px;
+    font-family: $monserrat;
+    background-color: #fff;
+    border: 1px solid $black;
+  }
+
+  &__job-title {
+    margin-bottom: 6px;
+    font-size: 15px;
+
+    &--applicant {
+      font-weight: 700;
+      font-family: $monserrat;
+      margin-bottom: 1px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+
+    @include onTabletSmall {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &-text {
+      font-size: 12px;
+      margin-right: 4px;
+
+      &--bold {
+        font-weight: 700;
+      }
+
+      &--subtitle {
+        color: $gray;
+        font-style: italic;
+      }
+    }
+
+    &-dot {
+      margin-right: 4px;
+      @include circle(4px);
+      background-color: $blue;
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__bottom {
+    padding: $dashboard-padding;
+  }
+}
+
+.pagination {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 540px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    font-size: 12px;
+    margin-right: 4px;
+    color: $gray;
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    @media (min-width: 540px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: 540px) {
+      align-self: auto;
+      width: 300px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    font-size: 12px;
+    border: 1px solid $gray;
+    color: $gray;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover, &--active {
+      background-color: $gray;
+      color: #fff;
+    }
+
+    &--disabled {
+      cursor: default;
+      opacity: 0.4;
+
+      &:hover {
+        background-color: #fff;
+        color: $gray;
+      }
+    }
+
+    &--step {
+      padding: 0 6px;
+    }
+
+    &--page {
+      width: 20px;
+
+      &:hover {
+        background-color: #fff;
+        color: $gray;
+      }
+    }
+  }
+
+  &__pages {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 76px;
+
+    @media (min-width: 540px) {
+      width: 92px;
+    }
+  }
+}
+
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}

@@ -1,0 +1,57 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 80px;
+  padding: 20px;
+
+  @include onTablet {
+    padding: 20px 40px;
+  }
+
+  &__menu {
+    position: relative;
+    top: 1px;
+    z-index: 100;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    @include icon;
+    @include square(24px);
+    cursor: pointer;
+
+    &--chat {
+      @include square(22px);
+      background-image: url('../../../../media/dashboard-icons/message-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../media/dashboard-icons/message-icon-blue.png');
+      }
+    }
+
+    &--positions {
+      background-image: url('../../../../media/dashboard-icons/positions-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../media/dashboard-icons/positions-icon-blue.png');
+      }
+    }
+
+    &--offers {
+      position: relative;
+      top: 2px;
+      @include square(26px);
+      background-image: url('../../../../media/dashboard-icons/case-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../media/dashboard-icons/case-icon-blue.png');
+      }
+    }
+  }
+}

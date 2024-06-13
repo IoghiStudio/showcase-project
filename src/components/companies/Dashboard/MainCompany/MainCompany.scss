@@ -1,0 +1,336 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.main-company {
+  display: flex;
+  flex-direction: column;
+
+  @include onLaptop {
+    flex-direction: row;
+  }
+
+  @include onDesktop {
+    flex-direction: column;
+  }
+
+  @include onDesktopLarge {
+    flex-direction: row;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+    width: 100%;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+
+    @include onLaptop {
+      flex-direction: column;
+      width: 50%;
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: $dashboard-margin;
+    }
+
+    @include onDesktopLarge {
+      flex-direction: column;
+      width: 50%;
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+    }
+
+    @media (min-width: 1600px) {
+      flex-direction: row;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+
+    @include onLaptop {
+      width: 50%;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+
+    @include onDesktopLarge {
+      width: 50%;
+    }
+  }
+
+  &__messages {
+    margin-bottom: $dashboard-margin;
+  }
+
+  &__offers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: max-content;
+
+    @include onTablet {
+      width: 60%;
+    }
+
+    @include onLaptop {
+      width: 100%;
+    }
+
+    @include onDesktop {
+      width: 60%;
+    }
+
+    @include onDesktopLarge {
+      width: 100%;
+    }
+
+    @media (min-width: 1600px) {
+      width: 60%;
+    }
+  }
+
+  &__announces {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+    height: max-content;
+
+    @include onTablet {
+      margin-bottom: 0;
+      width: 40%;
+      margin-right: $dashboard-margin;
+    }
+
+    @include onLaptop {
+      width: 100%;
+      margin-bottom: $dashboard-margin;
+    }
+
+    @include onDesktop {
+      width: 40%;
+      margin-bottom: 0;
+    }
+
+    @include onDesktopLarge {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: $dashboard-margin;
+    }
+
+    @media (min-width: 1600px) {
+      margin-right: $dashboard-margin;
+      margin-bottom: 0;
+      width: 40%;
+    }
+
+    &-top {
+      padding: $dashboard-padding;
+      padding-bottom: 0;
+    }
+
+    &-bottom {
+      display: flex;
+      justify-content: center;
+      padding: $dashboard-padding;
+    }
+
+    &-item {
+      padding: 14px $dashboard-padding;
+      border-bottom: 1px solid $white-gray;
+    }
+
+    &-name {
+      font-size: 14px;
+      font-weight: 700;
+      font-family: $monserrat;
+    }
+
+    &-date {
+      font-size: 12px;
+      color: $gray;
+    }
+  }
+
+  &__see-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    height: 40px;
+    border: 1px solid $blue;
+    color: $blue;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    font-family: $monserrat;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+}
+
+.immigration {
+  display: flex;
+  flex-direction: column;
+  padding: $dashboard-padding;
+  background-color: $blue;
+  color: #fff;
+  font-weight: 400;
+
+  @include onTabletSmall {
+    flex-direction: row;
+  }
+
+  &__icon {
+    margin-right: 20px;
+    @include icon;
+    @include square(166px);
+    background-image: url('../../../../media/dashboard-icons/emigration-help-blue.png');
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__headline {
+    margin-bottom: 20px;
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  &__title {
+    margin-bottom: 2px;
+    font-weight: 300;
+    font-family: $monserrat;
+    font-size: 26px;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  &__text {
+    margin-bottom: 18px;
+    font-size: 12px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 30px;
+    color: $blue;
+    height: 40px;
+    padding: 0 20px 0 14px;
+    cursor: pointer;
+
+    &-icon {
+      margin-right: 6px;
+      @include icon;
+      @include square(18px);
+      background-image: url('../../../../media/dashboard-icons/exclamation-circle-icon-blue.png');
+    }
+
+    &-text {
+      font-family: $monserrat;
+      font-size: 12px;
+      letter-spacing: 0.6px;
+      color: $blue;
+    }
+  }
+}
+
+.applicant-cv {
+  display: flex;
+  flex-direction: column;
+
+  &__top {
+    display: flex;
+  }
+
+  &__picture {
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      @include square(52px);
+      border-radius: 10px;
+      margin-right: 20px;
+      border: 1px solid $white-gray
+    }
+
+    @include square(100%);
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+  }
+
+  &__flag {
+    position: absolute;
+    display: inline-flex;
+    right: -10px;
+    bottom: -10px;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 14px;
+    font-family: $monserrat;
+    font-weight: 700;
+  }
+
+  &__job-title {
+    font-size: 13px;
+    color: $gray;
+  }
+
+  &__country-name {
+    font-size: 12px;
+    color: $gray;
+    font-style: italic;
+  }
+
+  &__rows {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__pair {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 0;
+
+    &--second {
+      align-items: flex-end;
+    }
+
+    &-title {
+      color: $gray;
+      font-size: 12px;
+    }
+
+    &-text {
+      font-size: 12px;
+    }
+  }
+}

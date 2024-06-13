@@ -1,0 +1,34 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.billing {
+  display: flex;
+  flex-direction: column;
+
+  &__plans {
+    margin-bottom: $dashboard-margin;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__history {
+    margin-bottom: $dashboard-margin;
+
+    @include onTablet {
+      margin: 0;
+      margin-right: $dashboard-margin;
+    }
+  }
+
+  &__card {
+    height: max-content;
+    max-width: 300px;
+  }
+}

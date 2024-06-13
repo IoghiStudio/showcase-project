@@ -1,0 +1,290 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+
+    &-icon {
+      flex-shrink: 0;
+      align-self: center;
+      margin-bottom: 30px;
+      @include icon;
+      @include square(140px);
+      background-image: url('../../../../media/icons/hourglass.png');
+    }
+
+    &-text {
+      align-self: center;
+      margin-bottom: 16px;
+      max-width: 272px;
+      font-size: 12px;
+      text-align: center;
+
+      &--gi {
+        color: $gray;
+        font-style: italic;
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+
+    @include onLaptop {
+      flex-direction: row;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      flex-direction: row;
+    }
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+
+      &--first {
+        margin-bottom: $dashboard-margin;
+
+        @include onLaptop {
+          margin: 0;
+          margin-right: $dashboard-margin;
+        }
+      }
+
+      @include onLaptop {
+        width: 50%;
+      }
+    }
+
+    &-container {
+      margin-bottom: $dashboard-margin;
+    }
+  }
+
+  &__promote {
+    margin-bottom: $dashboard-margin;
+
+    @include onLaptop {
+      width: 30%;
+      margin: 0;
+      margin-right: $dashboard-margin;
+    }
+  }
+
+  &__plan {
+    @include onLaptop {
+      width: 30%;
+    }
+  }
+
+  &__boxes {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+
+    @include onLaptop {
+      width: 40%;
+      margin-bottom: 0;
+    }
+
+    &-row {
+      display: flex;
+      margin-bottom: 16px;
+      height: 100%;
+
+      &--last {
+        margin: 0;
+      }
+    }
+  }
+
+  &__box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 16px;
+
+    @include onTabletSmall {
+      margin-right: $dashboard-margin
+    }
+
+    &--last {
+      margin-right: 0;
+
+      @include onLaptop {
+        margin-right: $dashboard-margin;
+      }
+    }
+
+    &-title {
+      z-index: 1;
+      padding: 2px 0;
+      font-weight: 900;
+      font-family: $monserrat;
+      font-size: 24px;
+    }
+
+    &-text {
+      z-index: 1;
+      padding: 2px 0;
+      font-family: $monserrat;
+      font-size: 12px;
+      font-weight: 700;
+
+      &--gray {
+        font-family: $open-sans;
+        font-weight: 600;
+        color: $gray;
+      }
+
+      &--italic {
+        font-style: italic;
+      }
+
+      &--offers {
+        color: $green;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+
+    &-green {
+      color: $green;
+    }
+
+    &-icon {
+      z-index: 0;
+      position: absolute;
+      right: 16px;
+      top: 14px;
+      @include icon;
+      @include square(50px);
+
+      &--offers {
+        background-image: url('../../../../media/dashboard-icons/case-icon-white-gray.png');
+      }
+
+      &--messages {
+        @include square(44px);
+        background-image: url('../../../../media/dashboard-icons/message-icon-white-gray.png');
+      }
+
+      &--positions {
+      @include square(48px);
+        background-image: url('../../../../media/dashboard-icons/positions-icon-white-gray.png');
+      }
+
+      &--promotions {
+        right: 12px;
+        background-image: url('../../../../media/dashboard-icons/thunder-icon-white-gray.png');
+      }
+    }
+
+    &-add-job {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    &-add-icon {
+      margin-right: 4px;
+      @include icon;
+      @include square(14px);
+      background-image: url('../../../../media/dashboard-icons/plus-circle-icon-green.svg');
+    }
+  }
+
+  &__messages {
+    padding: 0;
+  }
+
+  &__offers {
+    position: relative;
+  }
+
+  &__offer {
+    display: flex;
+    flex-direction: column;
+
+    &-top {
+      display: flex;
+      margin-bottom: 16px;
+
+      &-right {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &-title {
+      margin-bottom: 2px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: $monserrat;
+    }
+
+    &-text {
+      font-size: 12px;
+      color: $gray;
+      font-weight: 400;
+    }
+
+    &-picture {
+      margin: 0;
+      margin-right: 14px;
+    }
+
+    &-details {
+      font-size: 12px;
+      color: $gray;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    &-btn {
+      align-self: flex-start;
+      margin-bottom: 14px;
+    }
+
+    &-due-date {
+      color: $gray;
+    }
+  }
+
+  &__jobs {
+    position: relative;
+  }
+
+  &__seen-all {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    border: 1px solid $blue;
+    color: $blue;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    font-family: $monserrat;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+}

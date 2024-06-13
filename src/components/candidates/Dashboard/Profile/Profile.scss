@@ -1,0 +1,113 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.profile {
+  display: flex;
+  flex-direction: column;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+
+    @include onLaptop {
+      flex-direction: row;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+    }
+
+    @include onDesktopLarge {
+      flex-direction: row;
+    }
+  }
+
+  &__user-data {
+    width: 100%;
+    margin-bottom: $dashboard-margin;
+
+    @include onLaptop {
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+      flex-direction: row;
+      width: 70%;
+    }
+
+    @include onDesktop {
+      margin-bottom: $dashboard-margin;
+      margin-right: 0;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    @include onDesktopLarge {
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+      flex-direction: row;
+      width: 70%;
+    }
+  }
+
+  &__positions {
+    @include onLaptop {
+      width: 30%;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+
+    @include onDesktopLarge {
+      width: 30%;
+    }
+  }
+
+  &__columns {
+    display: flex;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &--2 {
+      display: none;
+
+      @include onLaptop {
+        display: flex;
+        margin-left: $dashboard-margin;
+      }
+    }
+  }
+
+  &__data {
+    width: 100%;
+    margin-bottom: $dashboard-margin;
+
+    &--driving {
+      margin-bottom: 0;
+    }
+
+    &--disabled-lp {
+      @include onLaptop {
+        display: none;
+      }
+    }
+
+    &--active-dl {
+      display: none;
+
+      @media (min-width: 1560px) {
+        display: flex;
+      }
+    }
+
+    &--disabled-dl {
+      @media (min-width: 1560px) {
+        display: none;
+      }
+    }
+  }
+}

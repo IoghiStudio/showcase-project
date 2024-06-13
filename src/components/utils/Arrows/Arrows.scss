@@ -1,0 +1,19 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.arrows {
+  display: flex;
+  align-items: center;
+  
+
+  &--toRight {
+    transform: rotateY(180deg);
+  }
+
+  &__arrow {
+    width: 10px;
+    height: 13px;
+    @include icon;
+    background-image: url('../../../media/icons/arrow-gray.svg');
+  }
+}

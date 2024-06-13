@@ -1,0 +1,64 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.input {
+  position: relative;
+  display: flex;
+  border-radius: 30%;
+
+  &__field {
+    height: 42px;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 1000px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: $white-gray;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    color: $black;
+    letter-spacing: 0.2px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-size: 12px;
+      font-weight: 400;
+      font-family: $monserrat;
+      color: rgb(170, 170, 170);
+    }
+
+    &--phone {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &--disabled {
+      background-color: #fff;
+      border: 1px solid $white-gray;
+      color: $gray;
+      cursor: default;
+    }
+
+    &--error {
+      border: 1px solid $red;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 21px;
+    top: 18px;
+    width: 10px;
+    height: 6px;
+    background-image: url('../../../media/icons/arrow-down-black.svg');
+    @include icon;
+    cursor: pointer;
+
+    &--disabled {
+      display: none;
+    }
+  }
+}

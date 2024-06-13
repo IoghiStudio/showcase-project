@@ -1,0 +1,200 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.promo-new {
+  display: flex;
+  flex-direction: column;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    @include onLaptop {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__mid {
+    display: flex;
+    flex-direction: column;
+
+    @include onTabletSmall {
+      flex-direction: row;
+    }
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      @include onTabletSmall {
+        width: 50%;
+      }
+
+      &:last-child {
+        @include onTabletSmall {
+          padding-left: 16px;
+        }
+      }
+    }
+
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-family: $monserrat;
+    font-size: 26px;
+    font-weight: 800;
+  }
+
+  &__custom-name {
+    font-size: 14px;
+  }
+
+  &__buttons {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+    }
+
+    @include onLaptop {
+      align-self: auto;
+    }
+  }
+
+  &__button {
+    margin-left: 20px;
+  }
+
+  &__save-no-promo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    margin: 14px 0;
+    padding: 0 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    font-family: $monserrat;
+    color: $blue;
+    border: 1px solid $blue;
+    background-color: #fff;
+
+    @media (min-width: 600px) {
+      margin-bottom: 0;
+    }
+
+    @include onLaptop {
+      margin-top: 0;
+    }
+
+    &--red {
+      border: 1px solid $red;
+      color: $red;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      flex-direction: row;
+    }
+  }
+
+  &__privacy {
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      width: 35%;
+    }
+  }
+
+  &__iconera {
+    margin-bottom: 20px;
+    align-self: center;
+    @include icon;
+    @include square(260px);
+    background-image: url('../../../../../media/dashboard-icons/job-opportunities.png');
+
+    @include onTabletSmall {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+    padding: $dashboard-padding;
+    height: max-content;
+
+    @include onLaptop {
+      width: 65%;
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    &-icon {
+      flex-shrink: 0;
+      margin-right: 8px;
+      @include icon;
+      @include circle(16px);
+      background-image: url('../../../../../media/icons/checked-icon.svg');
+    }
+
+    &-text {
+      font-size: 12px;
+    }
+
+    &-cost {
+      margin-top: 10px;
+      font-size: 15px;
+      color: $gray;
+
+      &-bold {
+        font-weight: 800;
+      }
+
+      &--sm {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 12px;
+      }
+    }
+
+    &-bottom {
+      font-size: 11px;
+      color: $gray;
+      font-style: italic;
+    }
+  }
+
+  &__expire-date {
+    color: $gray;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}

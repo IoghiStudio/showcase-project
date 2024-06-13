@@ -1,0 +1,30 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.picture {
+  display: flex;
+  flex-direction: column;
+  padding: $dashboard-padding;
+
+  &__image {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    @include circle(160px);
+    @include image;
+
+    &--logo {
+      border-radius: 34px;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__button {
+    align-self: center;
+  }
+}

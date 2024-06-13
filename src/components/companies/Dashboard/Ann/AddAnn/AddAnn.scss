@@ -1,0 +1,254 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.add-ann {
+  display: flex;
+  flex-direction: column;
+
+  &__call-api {
+    align-self: flex-end;
+    margin-bottom: $dashboard-margin;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  &__columns {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+
+    &:first-child {
+      margin-bottom: $dashboard-margin;;
+
+      @include onTablet {
+        margin-bottom: 0;
+        width: 55%;
+        margin-right: $dashboard-margin;
+      }
+
+      @media (min-width: 1500px) {
+        width: 65%;
+      }
+    }
+
+    &:last-child {
+      @include onTablet {
+        width: 45%;
+      }
+
+      @media (min-width: 1500px) {
+        width: 35%;
+      }
+    }
+  }
+
+  &__container {
+    margin-bottom: $dashboard-margin;
+  }
+
+
+  &__padding {
+    padding: $dashboard-padding;
+  }
+
+  &__input-area {
+    height: 220px;
+  }
+}
+
+.announce {
+  display: flex;
+  flex-direction: column;
+
+  &__contract {
+    position: relative;
+    width: 100%;
+  }
+
+  &__top {
+    padding: $dashboard-padding;
+    padding-bottom: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 1500px) {
+      flex-direction: row;
+    }
+  }
+
+  &__currency {
+    width: 100%;
+    margin-bottom: 18px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+
+  &__column {
+    &:first-child {
+      padding: 0 $dashboard-padding;
+    }
+
+    @media (min-width: 1500px) {
+      &:first-child {
+        border-right: 1px solid $white-gray;
+      }
+
+      padding-bottom: 0;
+      width: 50%;
+    }
+
+    &-top {
+      padding: 0 $dashboard-padding 26px;
+      border-bottom: 1px solid $white-gray;
+
+      @media (min-width: 1500px) {
+        padding-bottom: 50px;
+      }
+    }
+
+    &-bottom {
+      padding: $dashboard-padding;
+      padding-top: 36px;
+    }
+  }
+
+  &__benefit {
+    display: flex;
+    padding: 12px 0;
+    font-weight: 400;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &--flat {
+      padding: 0;
+      margin-bottom: 18px;
+    }
+
+    &-icon {
+      margin-right: 14px;
+      @include icon;
+      @include circle(22px);
+      background-image: url('../../../../../media/icons/checked-icon.svg');
+      opacity: 0.3;
+    }
+
+    &-name {
+      font-size: 14px;
+    }
+  }
+}
+
+.alien-language {
+  padding-bottom: $dashboard-padding;
+
+  &__item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 14px;
+    margin-bottom: 12px;
+
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      border: 1px solid $white-gray;
+    }
+
+    &-lang {
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      margin-right: 4px;
+    }
+
+    &-prof {
+      margin-right: 4px;
+    }
+
+    &-cross {
+      &-container {
+        flex-shrink: 0;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        width: 51px;
+        cursor: pointer;
+      }
+
+      @include icon;
+      @include square(20px);
+      background-image: url('../../../../../media/icons/cross-red.svg');
+    }
+  }
+
+  &__top {
+    padding: $dashboard-padding;
+  }
+
+  &__bottom {
+    border: 1px solid $white-gray;
+    border-left: 0;
+    border-right: 0;
+    padding: $dashboard-padding;
+  }
+
+  &__label {
+    position: relative;
+    width: 100%;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__language-select {
+    margin-right: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__proficiency-select {
+    border-radius: 0;
+    margin-right: 4px;
+  }
+
+  &__add {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    height: 42px;
+    padding: 0 10px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 1px solid $white-gray;
+    color: $green;
+    font-size: 14px;
+    cursor: pointer;
+
+    &--category {
+      margin-left: 4px;
+    }
+  }
+}

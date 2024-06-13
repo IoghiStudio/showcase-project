@@ -1,0 +1,236 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.data {
+  display: flex;
+  flex-direction: column;
+  font-family: $monserrat;
+
+  &__item {
+    &-container {
+      display: flex;
+      flex-direction: column;
+      padding: 12px;
+      border-bottom: 1px solid $white-gray;
+
+      @media (min-width: 660px) {
+        padding: 14px 20px;
+      }
+    }
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    width: 100%;
+
+    &-flag {
+      display: inline-flex;
+      margin-right: 6px;
+    }
+
+    &-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: $gray;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      @media (min-width: 660px) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      @include onLaptop {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+      }
+
+      @include onDesktopLarge {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+
+      &--stretched {
+        width: 94%;
+
+        @media (min-width: 660px) {
+          width: 68%;
+        }
+
+        @include onLaptop {
+          width: 94%;
+        }
+
+        @include onDesktopLarge {
+          width: 68%;
+        }
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 32px;
+
+      &--no-mg {
+        margin-left: 0;
+      }
+
+      @media (min-width: 660px) {
+        justify-content: flex-start;
+      }
+
+      @include onLaptop {
+        justify-content: space-between;
+      }
+
+      @include onDesktopLarge {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &__date {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 660px) {
+      text-align: right;
+    }
+
+    @include onLaptop {
+      text-align: left;
+    }
+
+    @include onDesktopLarge {
+      text-align: right;
+    }
+
+    &--start {
+      width: 65px;
+    }
+
+    &--end {
+      width: 58px;
+      margin-left: 20px;
+    }
+
+    &-name {
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    &-text {
+      font-size: 12px;
+    }
+  }
+
+  &__options {
+    margin-left: 10px;
+
+    @media (min-width: 660px) {
+      margin-left: 20px;
+    }
+  }
+
+  &__flag {
+    display: inline-flex;
+    margin-right: 12px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    &--stretched {
+      width: 100%;
+    }
+
+    &-bottom {
+      display: flex;
+      margin-bottom: 2px;
+    }
+  }
+
+  &__title {
+    font-family: $monserrat;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  &__text {
+    font-size: 12px;
+    margin-right: 3px;
+
+    &--gray {
+      color: $gray;
+    }
+  }
+
+  &__desc {
+    font-size: 11px;
+    color: $gray;
+
+    &--ml {
+      margin-left: 32px;
+    }
+  }
+
+  &__bar {
+    &-container {
+      margin: 4px 0 2px;
+      height: 6px;
+      width: 90%;
+      border-radius: 10px;
+      background-color: $white-gray;
+    }
+
+    border-radius: 10px;
+    background-color: $blue;
+    width: 0%;
+    height: 100%;
+
+    &--native {
+      width: 100%;
+    }
+
+    &--c2 {
+      width: 85.71%;
+    }
+
+    &--c1 {
+      width: 71.42%;
+    }
+
+    &--b2 {
+      width: 57.13%;
+    }
+
+    &--b1 {
+      width: 42.84%;
+    }
+
+    &--a2 {
+      width: 28.55%;
+    }
+
+    &--a1 {
+      width: 14.26%;
+    }
+  }
+}

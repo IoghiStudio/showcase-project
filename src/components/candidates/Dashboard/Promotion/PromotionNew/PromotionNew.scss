@@ -1,0 +1,186 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.promotion-new {
+  display: flex;
+  flex-direction: column;
+
+  @include onLaptop {
+    flex-direction: row;
+  }
+
+  &__promote {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: $dashboard-margin;
+
+    @include onLaptop {
+      width: 60%;
+      margin: 0;
+      margin-right: $dashboard-margin;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+
+      @include onTablet {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    color: $gray;
+
+    @include onLaptop {
+      width: 40%;
+    }
+
+    &-headline {
+      font-size: 13px;
+      margin-bottom: 30px;
+    }
+
+    &-title {
+      margin-bottom: 4px;
+      color: $black;
+      font-family: $monserrat;
+      font-size: 28px;
+    }
+
+    &-green {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      font-size: 13px;
+      color: $green;
+
+      &-icon {
+        margin-right: 8px;
+        @include circle(6px);
+        background-color: $green;
+      }
+
+      &-span {
+        margin-right: 4px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__pairs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--bottom {
+      margin: 30px 0;
+    }
+  }
+
+  &__pair {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      text-align: right;
+      margin-bottom: 2px;
+      font-size: 15px;
+
+      &--black {
+        color: $black;
+      }
+    }
+
+    &-text {
+      font-size: 12px;
+    }
+  }
+
+  &__promote-btn {
+    align-self: flex-end;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      padding-right: 20px;
+      width: 50%;
+      border-right: 2px solid $white-gray;
+    }
+  }
+
+  &__countries {
+    display: flex;
+
+    @include onTablet {
+      padding-left: 20px;
+      width: 50%;
+    }
+  }
+
+  &__label {
+    position: relative;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  &__country {
+    display: flex;
+    margin-bottom: 10px;
+
+    &-left {
+      display: flex;
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+      height: 38px;
+      padding: 0 8px;
+      border: 1px solid $white-gray;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      width: 100%;
+    }
+
+    &-flag {
+      display: inline-flex;
+      margin-right: 10px;
+    }
+
+    &-name {
+      font-size: 14px;
+    }
+  }
+
+  &__cross {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    width: 42px;
+    margin-left: 3px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 1px solid $white-gray;
+    cursor: pointer;
+
+    &-icon {
+      @include icon;
+      @include square(16px);
+      background-image: url('../../../../../media/icons/cross-red.svg');
+    }
+  }
+}

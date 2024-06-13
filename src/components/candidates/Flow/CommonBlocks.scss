@@ -1,0 +1,31 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+
+  &-arrows {
+    padding: 0 8px;
+    position: relative;
+    top: -8px;
+  }
+
+  &--mobile {
+    @include onLaptop {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+    justify-content: space-between;
+
+    @include onLaptop {
+      display: flex;
+    }
+  }
+}
+

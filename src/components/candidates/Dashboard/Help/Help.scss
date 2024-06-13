@@ -1,0 +1,43 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.help {
+  display: flex;
+  flex-direction: column;
+
+  @include onLaptop {
+    flex-direction: row;
+  }
+
+  &__handbook {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+    height: max-content;
+
+    @include onLaptop {
+      width: 65%;
+      margin: 0;
+      margin-right: $dashboard-margin;
+    }
+
+    @include onDesktopLarge {
+      width: 70%;
+    }
+  }
+
+  &__support {
+    max-width: 540px;
+    height: max-content;
+
+    @include onLaptop {
+      max-width: auto;
+      width: 35%;
+    }
+
+    @include onDesktopLarge {
+      width: 30%;
+    }
+  }
+}
+

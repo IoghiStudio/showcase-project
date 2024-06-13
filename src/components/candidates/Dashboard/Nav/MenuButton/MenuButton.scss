@@ -1,0 +1,36 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.menu-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+
+  &__line {
+    width: 100%;
+    height: 3px;
+    background-color: $gray;
+    transition-property: background-color, transform;
+    transition-duration: 300ms;
+    transform-origin: left;
+
+    &--hover {
+      background-color: $blue;
+    }
+
+    &--active-1 {
+      transform: rotate(38deg);
+    }
+
+    &--active-2 {
+      transform: rotateX(90deg);
+    }
+
+    &--active-3 {
+      transform: rotate(-38deg);
+    }
+  }
+}

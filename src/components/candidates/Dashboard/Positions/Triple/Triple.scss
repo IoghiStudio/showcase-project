@@ -1,0 +1,48 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.triple {
+  display: flex;
+  align-items: center;
+  color: $gray;
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 13px;
+  }
+
+  &__count {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  &__icon {
+    margin-right: 14px;
+    @include square(26px);
+    @include icon;
+
+    &--views {
+      background-image: url('../../../../../media/dashboard-icons/eye-icon-gray.png');
+    }
+
+    &--clicks {
+      @include square(22px);
+      margin-right: 18px;
+      background-image: url('../../../../../media/dashboard-icons/folder-open-icon-gray.svg');
+    }
+
+    &--saved {
+      background-image: url('../../../../../media/dashboard-icons/star-empty-icon-gray.png');
+    }
+
+    &--offers {
+      @include square(24px);
+      margin-right: 16px;
+      background-image: url('../../../../../media/dashboard-icons/offers-count-icon-gray.png');
+    }
+  }
+}

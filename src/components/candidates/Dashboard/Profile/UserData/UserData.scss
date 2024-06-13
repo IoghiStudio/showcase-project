@@ -1,0 +1,167 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.user-data {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: $dashboard-padding;
+
+  @include onDesktop {
+    flex-direction: row;
+  }
+
+  &__edit {
+    flex-shrink: 0;
+    @include square(24px);
+    @include icon;
+    background-image: url('../../../../../media/dashboard-icons/edit-icon-gray.png');
+    cursor: pointer;
+  }
+
+  &__picture {
+    &-container {
+      flex-shrink: 0;
+      position: relative;
+      @include square(180px);
+      margin-bottom: 16px;
+
+      @include onLaptop {
+        margin-right: 24px;
+        margin-bottom: 24px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+
+    @include square(100%);
+    border-radius: 16px;
+    @include image;
+  }
+
+  &__flag {
+    display: inline-flex;
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    margin-right: 6px;
+    @include icon;
+    @include square(18px);
+
+    &--location {
+      margin-right: 8px;
+      @include square(16px);
+      background-image: url('../../../../../media/dashboard-icons/user-data/location-icon-gray.png');
+    }
+
+    &--industry {
+      margin-right: 8px;
+      @include square(16px);
+      background-image: url('../../../../../media/dashboard-icons/industry-icon-gray.png');
+    }
+
+    &--tax-id {
+      background-image: url('../../../../../media/dashboard-icons/tax-stamp-icon-gray.png');
+    }
+
+
+    &--birthday {
+      background-image: url('../../../../../media/dashboard-icons/user-data/birthday-icon-gray.png');
+    }
+
+    &--nationality {
+      background-image: url('../../../../../media/dashboard-icons/user-data/flag-icon-gray.png');
+    }
+
+    &--phone {
+      background-image: url('../../../../../media/dashboard-icons/user-data/phone-icon-gray.png');
+    }
+
+    &--plic {
+      @include square(16px);
+      margin-right: 8px;
+      background-image: url('../../../../../media/dashboard-icons/user-data/plic-icon-gray.png');
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      position: absolute;
+      top: 26px;
+      left: 226px;
+      right: 20px;
+    }
+
+    @include onDesktop {
+      position: static;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+    @include onTablet {
+      width: 50%;
+    }
+
+    &--first {
+      width: auto;
+    }
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-size: 26px;
+    font-weight: 700;
+    font-family: $monserrat;
+  }
+
+  &__text {
+    font-size: 13px;
+    font-weight: 400;
+    font-family: $monserrat;
+
+    &--bold {
+      font-weight: 700;
+      margin-right: 4px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+
+    &-row {
+      display: flex;
+      flex-direction: column;
+
+      @include onTablet {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  }
+}

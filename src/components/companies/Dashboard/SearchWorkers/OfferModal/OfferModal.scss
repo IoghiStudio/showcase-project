@@ -1,0 +1,211 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.offer-modal {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  @media (min-height: 800px) {
+    align-items: center;
+  }
+
+  &__cross {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    @include icon;
+    @include square(48px);
+    cursor: pointer;
+    background-image: url('../../../../../media/dashboard-icons/cross-icon-gray.png');
+  }
+
+  &__content {
+    margin: 14px;
+    overflow-y: auto;
+    max-height: 92vh;
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.2);
+
+    @include onTabletSmall {
+      margin: 30px;
+    }
+
+    @media (min-width: 680px) {
+      max-height: 734px;
+    }
+
+    @include onTablet {
+      width: 724px;
+    }
+
+    @include onLaptop {
+      width: 774px;
+    }
+  }
+
+  &__top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+    border-bottom: 1px solid $white-gray;
+
+    @include onTabletSmall {
+      padding: 36px 36px 24px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+
+    @media (min-width: 460px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include onTabletSmall {
+      padding: 36px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-family: $monserrat;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  &__columns {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 730px) {
+      flex-direction: row;
+    }
+  }
+
+  &__column {
+    @media (min-width: 730px) {
+      width: 50%;
+
+      &--first {
+        padding-right: 20px;
+        margin-right: 20px;
+        border-right: 1px solid $white-gray;
+
+        @include onTabletSmall {
+          padding-right: 30px;
+          margin-right: 30px;
+        }
+
+
+        @include onTabletSmall {
+          padding-right: 36px;
+          margin-right: 36px;
+        }
+      }
+    }
+  }
+
+  &__label {
+    width: 100%;
+    margin-bottom: 12px;
+
+    &--first {
+      margin-right: 20px;
+    }
+
+    &--area {
+      height: 152px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__benefits {
+    padding-top: 8px;
+
+    @media (min-width: 730px) {
+      height: 288px;
+    }
+  }
+
+  &__benefit {
+    display: flex;
+    margin-bottom: 15px;
+    font-weight: 400;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-icon {
+      margin-right: 14px;
+      @include icon;
+      @include circle(22px);
+      background-image: url('../../../../../media/icons/checked-icon.svg');
+      opacity: 0.3;
+    }
+
+    &-name {
+      font-size: 14px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    height: 36px;
+    font-size: 12px;
+    font-family: $monserrat;
+    letter-spacing: 0.6px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: $green;
+    color: #fff;
+    font-weight: 400;
+    padding: 0 20px;
+
+    &--first {
+      width: max-content;
+      margin-bottom: 10px;
+
+      @media (min-width: 460px) {
+        margin-bottom: 0;
+      }
+    }
+
+    &--adjust {
+      background-color: $blue;
+    }
+
+    &--cancel {
+      background-color: #fff;
+      border: 1px solid $gray;
+      color: $gray;
+    }
+
+    &--send {
+      width: 188px;
+    }
+  }
+}

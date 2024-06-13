@@ -1,0 +1,17 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.flag-icon {
+  @include circle(24px);
+}
+
+$min-size: 18;
+$max-size: 50;
+
+@for $i from $min-size through $max-size {
+  $class-name: "flag-icon--#{$i}";
+
+  .#{$class-name} {
+    @include circle(#{$i}px);
+  }
+}

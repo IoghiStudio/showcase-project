@@ -1,0 +1,96 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+//nicu
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 34px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(233, 240, 255);
+
+  &__title {
+    margin: 30px 0 36px;
+    font-family: $monserrat;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 22px;
+
+    @include onTablet {
+      margin: 20px 0 40px;
+      font-size: 32px;
+      line-height: 38px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    max-width: 1408px;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 65px;
+    padding: 20px;
+
+    @include onTablet {
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
+      padding: 20px 30px;
+      margin: 0;
+
+      &:last-child {
+        border: 0px;
+      }
+    }
+
+    @include onLaptop {
+      padding: 20px 40px;
+    }
+
+    @include onDesktop {
+      padding: 20px 50px;
+    }
+
+    &-title {
+      font-family: $monserrat;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: $black;
+    }
+  }
+
+  &__number {
+    font-family: $monserrat;
+    margin-bottom: 26px;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 28px;
+    color: $black;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 28px;
+    color: $black;
+  }
+
+  &__bottom {
+    margin-top: 30px;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,144 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.worker-profile {
+  display: flex;
+  flex-direction: column;
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    margin-bottom: $dashboard-margin;
+    width: max-content;
+    align-self: flex-end;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    height: 36px;
+    padding: 0 12px;
+    font-family: $monserrat;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    background-color: $green;
+    color: #fff;
+    cursor: pointer;
+
+    &:first-child {
+      margin-right: 20px;
+    }
+
+    &--red {
+      background-color: #fff;
+      border: 1px solid $red;
+      color: $red;
+    }
+
+    &--blue {
+      background-color: #fff;
+      border: 1px solid $blue;
+      color: $blue;
+      cursor: default;
+    }
+
+    &-icon {
+      @include icon;
+      @include square(22px);
+      margin-right: 10px;
+
+      &--cross {
+        background-image: url('../../../../../media/dashboard-icons/circled-x-icon-red.png');
+      }
+
+      &--check {
+        @include square(20px);
+        background-image: url('../../../../../media/dashboard-icons/checkmark-icon-white.svg');
+      }
+
+      &--chat {
+        @include square(20px);
+        background-image: url('../../../../../media/dashboard-icons/chat-icon-white.png');
+      }
+
+      &--info {
+        @include square(20px);
+        background-image: url('../../../../../media/dashboard-icons/exclamation-icon-blue.png');
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+
+    @media (min-width: 1560px) {
+      display: none;
+    }
+  }
+
+  &__user-data-column {
+    display: none;
+
+    @include onLaptop {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @media (min-width: 1560px) {
+      display: flex;
+    }
+  }
+
+  &__position-data-column {
+    display: none;
+
+    @include onLaptop {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @media (min-width: 1560px) {
+      display: flex;
+    }
+  }
+
+  &__column {
+    @media (min-width: 1560px) {
+      &:first-child {
+        width: 65%;
+      }
+
+      &:last-child {
+        width: 35%;
+      }
+    }
+
+    @media (min-width: 1660px) {
+      &:first-child {
+        width: 60%;
+      }
+
+      &:last-child {
+        width: 40%;
+      }
+    }
+  }
+}

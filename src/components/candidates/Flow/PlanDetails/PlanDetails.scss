@@ -1,0 +1,51 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.plan-details {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+
+  &__title {
+    display: none;
+    margin-bottom: 24px;
+    font-family: $monserrat;
+    font-size: 18px;
+    font-weight: 700;
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+
+  &__text {
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  &__subtitle {
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &__points {
+    margin-bottom: 24px;
+  }
+
+  &__point {
+    font-size: 14px;
+    margin-bottom: 4px;
+
+    @include onLaptop {
+      text-indent: 24px;
+    }
+  }
+
+  &__bottom-line {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    font-style: italic;
+  }
+}

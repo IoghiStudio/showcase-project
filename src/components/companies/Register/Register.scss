@@ -1,0 +1,339 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.register {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    height: 138px;
+    padding: 57px 20px 10px;
+    color: #fff;
+    @include image;
+    background-image: url('../../../media/backgrounds/4.jpg');
+    background-position: bottom;
+
+    @include onTablet {
+      height: 230px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 6px;
+    font-family: $monserrat;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+    letter-spacing: 0px;
+    text-align: center;
+
+    @include onTablet {
+      font-size: 56px;
+      line-height: 68px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    margin-bottom: 6px;
+
+    @include onTablet {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  &__text {
+    color: $gray;
+    font-size: 10px;
+    line-height: 18px;
+    text-align: center;
+
+    @include onTablet {
+      font-size: 14px;
+      line-height: 28px;
+    }
+  }
+
+  &__form {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    padding: 46px 32px 56px;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include onTabletSmall {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @include onTablet {
+      padding: 47px 50px 50px;
+    }
+  }
+
+  &__labels {
+    &-parent {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      @include onLaptop {
+        flex-direction: row;
+      }
+    }
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+
+    @include onLaptop {
+      margin-bottom: 34px;
+    }
+
+    &--first {
+      @include onLaptop {
+        padding-right: 34px;
+        margin-right: 34px;
+        border-right: 2px solid $white-gray;
+        margin-bottom: 0;
+      }
+
+      @include onDesktopLarge {
+        padding-right: 44px;
+        margin-right: 44px;
+        border-right: 2px solid $white-gray;
+      }
+    }
+
+    &--right {
+      display: flex;
+      flex-direction: column;
+
+      @include onLaptop {
+        flex-direction: column;
+        width: 44%
+      }
+    }
+
+    &-section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      @include onTablet {
+        flex-direction: row;
+      }
+
+      &--right {
+        @include onLaptop {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  &__wrong-input {
+    position: absolute;
+    bottom: 46px;
+    right: 0;
+    display: none;
+    align-items: center;
+    height: 24px;
+    padding: 0 14px;
+    border-radius: 14px;
+    border: 1px solid $red;
+    color: $red;
+    font-size: 14px;
+
+    &--active {
+      display: flex;
+    }
+
+    @include onDesktopLarge {
+
+    }
+  }
+
+  &__label {
+    position: relative;
+    width: 100%;
+    margin-bottom: 18px;
+
+    &--first {
+      @include onTablet {
+        margin-right: 40px;
+      }
+
+      @include onDesktop {
+        margin-right: 60px;
+      }
+    }
+
+    &--types {
+      @include onTablet {
+        order: -1;
+        margin-right: 40px;
+      }
+
+      @include onLaptop {
+        order: 0;
+      }
+    }
+
+    &--tax-id {
+      @include onLaptop {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__types-1 {
+    display: none;
+
+    @include onLaptop {
+      display: flex;
+    }
+  }
+
+  &__types-2 {
+    @include onLaptop {
+      display: none;
+    }
+  }
+
+  &__divider {
+    margin-bottom: 29px;
+    border-bottom: 2px solid $white-gray;
+  }
+
+  &__conditions {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  &__bottom {
+    &-container {
+      display: flex;
+      flex-direction: column;
+
+      @include onTablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    }
+
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    width: 100%;
+  }
+
+  &__submit {
+    position: relative;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    height: 40px;
+
+    @include onLaptop {
+      width: 320px;
+      margin-right: 60px;
+      height: 50px;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    position: relative;
+    left: 6px;
+    margin-bottom: 12px;
+
+    &--direct {
+      margin-top: 4px;
+    }
+
+    &-title {
+      position: relative;
+      top: 1px;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0px;
+      color: $black;
+    }
+
+    &-link {
+      display: inline-block;
+      margin: 0 4px;
+      font-weight: 700;
+      text-decoration: underline;
+      width: fit-content;
+    }
+  }
+
+  &__safe {
+    display: flex;
+    align-items: center;
+    padding: 0px 16px;
+    max-width: 300px;
+
+    &-icon {
+      flex-shrink: 0;
+      width: 15px;
+      height: 18px;
+      margin-right: 16px;
+
+      @include icon;
+      background-image: url('../../../media/icons/safe-lock-icon.svg');
+    }
+
+    &-text {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0px;
+      color: $green;
+
+      @include onTablet {
+        font-weight: 600;
+      }
+
+      @include onDesktopLarge {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__validate-icon {
+    position: absolute;
+    top: 38px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &--invalid {
+      background-image: url("../../../media/icons/off.svg");
+    }
+
+    &--valid {
+      background-image: url("../../../media/icons/checked-icon.svg");
+    }
+  }
+}

@@ -1,0 +1,137 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.position-menu {
+  overflow: hidden;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+  border: 1px solid $white-gray;
+  border-radius: 14px;
+  width: 192px;
+  background-color: #fff;
+
+  &--ann {
+    width: 200px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $white-gray;
+    padding: 8px 12px;
+
+    &:last-child {
+      border: 0;
+    }
+
+    &:hover {
+      background-color: $white-gray;
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    margin-right: 14px;
+    @include square(16px);
+    @include icon;
+
+    &--promote {
+      background-image: url('../../../../../media/dashboard-icons/promotion-icon-gray.png');
+    }
+
+    &--edit {
+      background-image: url('../../../../../media/dashboard-icons/edit-icon-gray.png');
+    }
+
+    &--pause {
+      background-image: url('../../../../../media/dashboard-icons/pause-icon-gray.png');
+    }
+
+    &--continue {
+      background-image: url('../../../../../media/dashboard-icons/continue-icon-gray.png');
+    }
+
+    &--delete {
+      background-image: url('../../../../../media/dashboard-icons/delete-icon-gray.svg');
+    }
+
+    &--profile {
+      background-image: url('../../../../../media/dashboard-icons/profile-icon-gray.png');
+    }
+
+    &--accept {
+      background-image: url('../../../../../media/dashboard-icons/accept-icon-gray.png');
+    }
+
+    &--company {
+      background-image: url('../../../../../media/dashboard-icons/company-gray.png');
+    }
+
+    &--video {
+      position: relative;
+      left: 1px;
+      margin-right: 15px;
+      @include square(15px);
+      background-image: url('../../../../../media/dashboard-icons/video-camera-icon-gray.png');
+    }
+
+    &--download-cv {
+      background-image: url('../../../../../media/dashboard-icons/cv-download-icon-gray.png');
+    }
+
+    &--block {
+      position: relative;
+      left: 1px;
+      background-image: url('../../../../../media/dashboard-icons/reject-gray.svg');
+    }
+
+    &--favorite {
+      margin-right: 12px;
+      @include square(18px);
+      background-image: url('../../../../../media/dashboard-icons/star-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/star-empty-icon-gray.png');
+      }
+    }
+
+    &--favorite-2 {
+      margin-right: 12px;
+      @include square(18px);
+      background-image: url('../../../../../media/dashboard-icons/heart-filled-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/heart-empty-icon-gray.png');
+      }
+    }
+
+    &--send-offer {
+      position: relative;
+      left: 1px;
+      margin-right: 16px;
+      @include square(14px);
+      background-image: url('../../../../../media/dashboard-icons/offers-icon-gray.png');
+    }
+
+    &--view-offer {
+      position: relative;
+      left: 1px;
+      margin-right: 16px;
+      @include square(14px);
+      background-image: url('../../../../../media/dashboard-icons/offers-icon-gray.png');
+    }
+
+    &--contact {
+      margin-right: 14px;
+      @include square(16px);
+      background-image: url('../../../../../media/dashboard-icons/message-icon-gray.png');
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    color: $gray;
+  }
+}

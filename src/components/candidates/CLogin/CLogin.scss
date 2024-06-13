@@ -1,0 +1,205 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.clogin {
+  display: flex;
+  flex-direction: column;
+  padding: 57px 24px 75px;
+
+  &--company {
+    margin: 0 auto;
+    max-width: 550px;
+    min-height: 100vh;
+    background-color: #fff;
+    justify-content: center;
+
+    @include onDesktop {
+      position: absolute;
+      right: 0;
+      width: 550px;
+    }
+  }
+
+  &__header {
+    color: $black;
+    margin-bottom: 57px;
+  }
+
+  &__label {
+    position: relative;
+    width: 100%;
+    margin-bottom: 18px;
+
+    &--first {
+      @include onTablet {
+        margin-right: 40px;
+      }
+
+      @include onDesktop {
+        margin-right: 60px;
+      }
+    }
+  }
+
+  &__wrong-input {
+    position: absolute;
+    top: 168px;
+    display: none;
+    align-items: center;
+    height: 24px;
+    padding: 0 14px;
+    border-radius: 14px;
+    border: 1px solid $red;
+    color: $red;
+    font-size: 14px;
+
+    &--active {
+      display: flex;
+    }
+
+    @include onDesktopLarge {
+      top: 168px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 3px;
+    text-align: center;
+    font-family: $monserrat;
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 68px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+
+    &-1 {
+      @include onDesktopLarge {
+        display: none;
+      }
+    }
+
+    &-2 {
+      display: none;
+
+      @include onDesktopLarge {
+        display: block;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 28px;
+    color: $gray;
+  }
+
+  &__to-company {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__form {
+    position: relative;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 320px;
+    width: 100%;
+  }
+
+  &__submit {
+    margin: 24px 0 15px;
+    width: 310px;
+    height: 50px;
+
+    @include onDesktopLarge {
+      margin: 24px 0 48px;
+    }
+  }
+
+  &__no-account-text {
+    margin-bottom: 10px;
+    color: $black;
+    font-family: $monserrat;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+    text-align: center;
+
+    @include onDesktopLarge {
+      display: none;
+    }
+
+    &--always-on {
+      @include onDesktopLarge {
+        display: block;
+      }
+    }
+  }
+
+  &__register {
+    font-weight: 400;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__reset {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+
+    &-text {
+      font-size: 12px;
+      line-height: 28px;
+      text-align: center;
+      color: $gray;
+      margin-bottom: 15px;
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 151px;
+      height: 40px;
+      border-radius: 30px;
+
+      font-family: $monserrat;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 28px;
+      letter-spacing: 1.4px;
+      text-align: center;
+      color: #fff;
+      cursor: pointer;
+
+      &--fb {
+        margin-right: 16px;
+        background-color: $facebook
+      }
+
+      &--google {
+        background-color: $google;
+      }
+    }
+  }
+}

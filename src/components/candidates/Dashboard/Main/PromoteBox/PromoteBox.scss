@@ -1,0 +1,61 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.promote-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: $dashboard-padding;
+  color: #fff;
+  background-image: linear-gradient(to left bottom,#6146c4,#7542c3,#873dc1,#9836bf,#a82ebb);
+
+  &__part {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+  }
+
+  &__title {
+    font-family: $monserrat;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  &__icon {
+    @include icon;
+    @include square(40px);
+    background-image: url('../../../../../media/dashboard-icons/promotion-icon-white.png');
+  }
+
+  &__text {
+    max-width: 390px;
+    margin-bottom: 22px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    height: 38px;
+    background-color: #fff;
+    color: $blue;
+    font-family: $monserrat;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    border-radius: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}

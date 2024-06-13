@@ -1,0 +1,130 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  padding: 20px;
+  background-color: #fff;
+
+  @include onTablet {
+    padding: 20px 40px;
+  }
+
+  @include onLaptop {
+    height: 94px;
+  }
+
+  &__notify {
+    z-index: 100000;
+    position: absolute;
+    top: 40px;
+    right: -18px;
+  }
+
+  &__logo {
+    @include icon;
+    display: flex;
+    width: 160px;
+    height: 40px;
+    background-image: url('../../../../media/logos/logo-color.svg');
+
+    @include onLaptop {
+      display: none;
+    }
+  }
+
+  &__info {
+    display: none;
+    flex-direction: column;
+
+    @include onLaptop {
+      display: flex;
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray;
+    font-family: $monserrat;
+  }
+
+  &__subtitle {
+    font-family: var(--font-monserrat);
+    color: $black;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    position: relative;
+    margin-left: 12px;
+    @include icon;
+    @include square(24px);
+    cursor: pointer;
+    @include onTablet {
+      margin-left: 26px;
+    }
+
+    &--star {
+      @include square(27px);
+      background-image: url('../../../../media/dashboard-icons/star-icon-gray.png');
+    }
+
+    &--chat {
+      @include square(22px);
+      background-image: url('../../../../media/dashboard-icons/message-icon-gray.png');
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &--bell {
+      @include square(26px);
+      background-image: url('../../../../media/dashboard-icons/bell-icon-gray.png');
+    }
+  }
+
+  &__status {
+    position: absolute;
+    right: 0px;
+    @include circle(8px);
+
+    &--red {
+      background-color: $red;
+    }
+
+    &--green {
+      background-color: $green;
+    }
+  }
+
+  &__profile {
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 32px;
+      @include circle(50px);
+      border: 1px solid $blue;
+      cursor: pointer;
+    }
+
+    @include circle(46px);
+    @include image;
+  }
+}

@@ -1,0 +1,101 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 2000px;
+  background-color: #f3f4f5;
+
+  &--menu-open {
+    height: 100vh;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__children {
+    padding: 20px;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      padding: 24px;
+    }
+
+    @include onLaptop {
+      padding: 28px;
+    }
+
+    @include onDesktop {
+      padding: 24px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktopLarge {
+      padding: 34px;
+    }
+
+    @media (min-width: 1600px) {
+      padding: 44px;
+    }
+  }
+
+  &__side-menu {
+    display: none;
+    min-height: 100vh;
+    border-right: 2px solid $white-gray;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__header {
+    border-bottom: 2px solid $white-gray;
+  }
+
+  &__nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 2px solid $white-gray;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    transform: translateX(-104%);
+    transition: transform 600ms;
+    background-color: #fff;
+
+    &--active {
+      transform: translateX(0%)
+    }
+
+    @include onDesktop {
+      transform: translate(-100%);
+    }
+  }
+}

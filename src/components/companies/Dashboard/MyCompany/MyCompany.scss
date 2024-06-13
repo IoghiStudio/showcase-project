@@ -1,0 +1,340 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.my-company {
+  display: flex;
+  flex-direction: column;
+
+  @include onLaptop {
+    flex-direction: row;
+  }
+
+  @include onDesktop {
+    flex-direction: column;
+  }
+
+  @include onDesktopLarge {
+    flex-direction: row;
+  }
+
+  &__edit {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    flex-shrink: 0;
+    @include square(24px);
+    @include icon;
+    background-image: url('../../../../media/dashboard-icons/edit-icon-gray.png');
+    cursor: pointer;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: $dashboard-margin;
+    margin-right: 0;
+
+    @include onLaptop {
+      width: 70%;
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      margin-bottom: $dashboard-margin;
+      margin-right: 0;
+    }
+
+    @include onDesktopLarge {
+      width: 70%;
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+    }
+
+    &-mid {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: $dashboard-margin;
+
+      @include onTablet {
+        flex-direction: row;
+      }
+
+      @include onLaptop {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: flex;
+      }
+
+      @include onDesktopLarge {
+        display: none;
+      }
+    }
+  }
+
+  &__right {
+    display: none;
+    flex-direction: column;
+    width: 30%;
+
+    @include onLaptop {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onDesktopLarge {
+      display: flex;
+    }
+  }
+
+  &__data {
+    margin-bottom: $dashboard-margin;
+  }
+
+  &__jobs {
+    display: flex;
+    flex-direction: column;
+
+    &-button {
+      border: 30px;
+      width: 120px;
+      height: 32px;
+    }
+
+    &-top {
+      padding: $dashboard-padding;
+    }
+
+    &-count {
+      color: $gray;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 18px $dashboard-padding;
+      border-bottom: 1px solid $white-gray;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $white-gray-2
+      }
+
+      @include onTablet {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &-left {
+        display: flex;
+        flex-direction: column;
+
+        &-top {
+          display: flex;
+        }
+
+        @include onTablet {
+          flex-direction: row;
+        }
+      }
+
+      &-right  {
+        align-self: flex-end;
+        display: flex;
+        align-items: center;
+
+        @media (min-width: 1800px) {
+          align-self: auto;
+        }
+      }
+    }
+
+    &-picture {
+      &-container {
+        position: relative;
+        order: 2;
+        margin-top: 6px;
+
+        @include onTabletSmall {
+          order: 0;
+          margin: 0;
+        }
+
+        &--applicant {
+          order: 0;
+          margin: 0;
+        }
+      }
+
+      margin-right: 16px;
+      @include circle(44px);
+      @include image;
+      background-color: $white-gray-2;
+    }
+
+    &-job-title {
+      margin-bottom: 6px;
+      font-size: 15px;
+
+      &--applicant {
+        font-weight: 700;
+        font-family: $monserrat;
+        margin-bottom: 1px;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+
+      @include onTabletSmall {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      &-text {
+        font-size: 12px;
+        margin-right: 4px;
+
+        &--bold {
+          font-weight: 700;
+        }
+
+        &--subtitle {
+          color: $gray;
+          font-style: italic;
+        }
+      }
+
+      &-dot {
+        margin-right: 4px;
+        @include circle(4px);
+        background-color: $blue;
+      }
+
+      &-row {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &-bottom {
+      padding: $dashboard-padding;
+    }
+  }
+
+  &__about {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+    min-height: 140px;
+    width: 100%;
+    margin-bottom: $dashboard-margin;
+
+    @include onTablet {
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+    }
+
+    @include onLaptop {
+      margin-right: 0;
+      margin-bottom: $dashboard-margin;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+    }
+
+    @include onDesktopLarge {
+      margin-right: 0;
+      margin-bottom: $dashboard-margin;
+    }
+
+    &-description {
+      color: $gray;
+      font-weight: 400;
+      font-size: 12.5px;
+      font-style: italic;
+    }
+
+    &-input {
+      display: flex;
+      flex-direction: column;
+
+      &-save {
+        margin-top: 10px;
+        align-self: flex-end;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        height: 40px;
+        width: 120px;
+        background-color: $green;
+        color: #fff;
+        font-size: 12px;
+        letter-spacing: 0.6px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__admin {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+    width: 100%;
+
+    &-person {
+      display: flex;
+      align-items: center;
+    }
+
+    &-picture {
+      &-container {
+        position: relative;
+        margin-right: 12px;
+      }
+
+      @include circle(46px);
+      @include icon;
+    }
+
+    &-tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $gray;
+      font-size: 9px;
+      font-weight: 400;
+      border-radius: 10px;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

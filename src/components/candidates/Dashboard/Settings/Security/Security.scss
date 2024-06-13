@@ -1,0 +1,84 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.security {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 850px) {
+    flex-direction: row;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+
+    @media(min-width: 850px) {
+      width: 65%;
+      margin-right: $dashboard-margin;
+      margin-bottom: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+
+    &--first {
+      margin-bottom: $dashboard-margin;
+    }
+
+    &-text {
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: $gray;
+    }
+  }
+
+  &__auth {
+    height: max-content;
+    padding-bottom: 14px;
+
+    @media (min-width: 850px) {
+      width: 35%;
+    }
+
+    &-top {
+      padding: $dashboard-padding;
+      padding-bottom: 0;
+    }
+
+    &-row {
+      padding-top: 0;
+    }
+
+    &-bottom {
+      display: flex;
+      justify-content: center;
+      padding: $dashboard-padding;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $red;
+    height: 40px;
+    width: max-content;
+    padding: 0 20px;
+    border-radius: 30px;
+    border: 1px solid $red;
+    font-family: $monserrat;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+
+    &--delete {
+      background-color: $red;
+      color: #fff;
+    }
+  }
+}

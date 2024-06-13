@@ -1,0 +1,20 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.steps-layout {
+  margin: 0 auto;
+  max-width: 1360px;
+  padding: 36px 24px;
+
+  @include onTablet {
+    padding: 48px 36px;
+  }
+
+  @include onLaptop {
+    padding: 68px 48px;
+  }
+
+  @include onDesktop {
+    padding: 96px 68px;
+  }
+}

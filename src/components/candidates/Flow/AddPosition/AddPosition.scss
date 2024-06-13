@@ -1,0 +1,94 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.add-position {
+  display: flex;
+  flex-direction: column;
+
+  &__form {
+    width: 100%;
+    padding-bottom: 18px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid $white-gray;
+
+    @include onLaptop {
+      width: 94%;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__label {
+    width: 100%;
+    margin-bottom: 18px;
+
+    &--first {
+      @include onTablet {
+        margin-right: 40px;
+      }
+    }
+
+    &--salary {
+      order: 2;
+
+      @include onTablet {
+        order: 0;
+      }
+    }
+  }
+
+  &__benefits {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      margin: 6px 0 24px;
+      padding-left: 12px;
+      color: $gray;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+      font-family: $monserrat;
+      letter-spacing: 0.6px;
+    }
+
+    &-columns {
+      display: flex;
+      flex-direction: column;
+
+      @include onTablet {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    &-column {
+      width: 100%;
+
+      @include onTablet {
+        width: 45%;
+      }
+    }
+  }
+
+  &__benefit {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+
+    &-name {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 400;
+      font-family: $monserrat;
+    }
+  }
+}

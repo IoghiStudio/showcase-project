@@ -1,0 +1,22 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.resi {
+  display: flex;
+  flex-direction: column;
+  padding: $dashboard-padding;
+
+  &__added {
+    &-container {
+      position: relative;
+      color: $green;
+    }
+
+    position: absolute;
+    left: -62px;
+    bottom: 6px;
+    font-family: $monserrat;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}

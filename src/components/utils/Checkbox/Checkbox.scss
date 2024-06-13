@@ -1,0 +1,38 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.checkbox {
+  display: flex;
+  margin-right: 14px;
+
+  &__input {
+    flex-shrink: 0;
+    appearance: none;
+    display: inline-flex;
+    @include circle(22px);
+    border: 2px solid $gray;
+    opacity: 0.3;
+    cursor: pointer;
+
+    &--required {
+      border-color: $red;
+    }
+
+    &--error {
+      border: 2px solid $red;
+      opacity: 1;
+    }
+
+    &--blue-border {
+      border: 2px solid $blue;
+      opacity: 1;
+    }
+
+    &--checked {
+      background-image: url("../../../media/icons/checked-icon.svg");
+      @include icon;
+      border: 0;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.company-info-type {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $blue;
+  color: $blue;
+  font-size: 12px;
+  background-color: #fff;
+  padding: 0 20px;
+  height: 30px;
+  border-radius: 30px;
+}

@@ -1,0 +1,135 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.m-position {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__field-error {
+    position: absolute;
+    top: 40px;
+    left: 6px;
+    color: $red;
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      flex-direction: row;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+    }
+
+    @include onDesktopLarge {
+      flex-direction: row;
+    }
+  }
+
+  &__call-api {
+    align-self: flex-end;
+    margin-bottom: $dashboard-margin;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  &__container {
+    width: 100%;
+    padding: $dashboard-padding;
+    margin-bottom: $dashboard-margin;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      margin-right: $dashboard-margin;
+      width: 60%;
+    }
+
+    @include onDesktop {
+      margin-right: 0;
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    @include onDesktopLarge {
+      margin-right: $dashboard-margin;
+      width: 60%;
+      margin-bottom: - $dashboard-margin;
+    }
+  }
+
+  &__new-job {
+    &-benefits-title {
+      font-size: 16px;
+    }
+  }
+
+  &__skills {
+    @include onLaptop {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: $dashboard-margin;
+    }
+
+    @include onDesktopLarge {
+      margin-bottom: 0;
+    }
+  }
+
+  &__video {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    margin-bottom: 0;
+
+    @include onLaptop {
+      margin-bottom: $dashboard-margin;
+      width: 40%;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    @include onDesktopLarge {
+      margin-bottom: $dashboard-margin;
+      width: 40%;
+    }
+
+    &-texts {
+      margin-bottom: 20px;
+    }
+
+    &--text {
+      font-size: 13px;
+      margin-bottom: -10px;
+    }
+
+    &-bottom {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    &-demo-video {
+      flex-shrink: 0;
+      border-radius: 30px;
+    }
+
+    &-field {
+      border-radius: $dashboard-radius;
+    }
+  }
+}

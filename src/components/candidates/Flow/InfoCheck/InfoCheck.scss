@@ -1,0 +1,93 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.info-check {
+  display: flex;
+  flex-direction: column;
+
+  &__form {
+    width: 100%;
+    padding-bottom: 18px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid $white-gray;
+
+    @include onLaptop {
+      width: 94%;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__label {
+    width: 100%;
+    margin-bottom: 18px;
+
+    &--first {
+      @include onTablet {
+        margin-right: 40px;
+      }
+    }
+
+    &--email {
+      order: 2;
+
+      @include onTablet {
+        order: 0;
+      }
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+
+    &-title {
+      position: relative;
+      top: 1px;
+      font-family: $monserrat;
+      font-size: 12px;
+      line-height: 20px;
+      letter-spacing: 0px;
+      color: $black;
+    }
+
+    &-link {
+      display: inline-block;
+      margin: 0 4px;
+      font-weight: 500;
+      text-decoration: underline;
+      width: fit-content;
+    }
+  }
+
+  &__bottom {
+    margin-top: 30px;
+  }
+
+  &__select {
+    border-radius: 30px;
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+
+    &-select {
+      flex-shrink: 0;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+
+    &-input {
+      width: 100%;
+      margin-left: 4px;
+    }
+  }
+}

@@ -1,0 +1,306 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.menu-section {
+  display: flex;
+  align-items: center;
+  color: $gray;
+  cursor: pointer;
+
+  &--active {
+    color: $black;
+    background-color: #ddeeff;
+    font-weight: 600;
+  }
+
+  &--for-settings {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    border-radius: 12px;
+    width: 100%;
+
+    @include onLaptop {
+      justify-content: flex-start;
+      height: auto;
+      border-radius: 0;
+    }
+  }
+
+  &__bar {
+    margin-right: 20px;
+    height: 40px;
+    width: 6px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+
+    @media (min-width: 400px) {
+      height: 50px;
+    }
+
+    &--active {
+      background-color: $blue;
+    }
+
+    &--disabled {
+      display: none;
+
+      @include onLaptop {
+        display: flex;
+      }
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    margin-right: 14px;
+    @include square(24px);
+    @include icon();
+
+    &--dashboard {
+      background-image: url('../../../../../media/dashboard-icons/dashboard-icon-gray.svg');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/dashboard-icon-blue.svg');
+      }
+    }
+
+    &--my-company {
+      background-image: url('../../../../../media/dashboard-icons/company-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/company-blue.png');
+      }
+    }
+
+    &--company {
+      background-image: url('../../../../../media/dashboard-icons/company-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/company-blue.png');
+      }
+    }
+
+    &--profile {
+      background-image: url('../../../../../media/dashboard-icons/profile-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/profile-icon-blue.png');
+      }
+    }
+
+    &--positions {
+      background-image: url('../../../../../media/dashboard-icons/positions-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/positions-icon-blue.png');
+      }
+    }
+
+    &--applicants {
+      background-image: url('../../../../../media/dashboard-icons/positions-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/positions-icon-blue.png');
+      }
+    }
+
+    &--promotion {
+      position: relative;
+      top: 1px;
+      background-image: url('../../../../../media/dashboard-icons/promotion-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/promotion-icon-blue.png');
+      }
+    }
+
+    &--offers-received {
+      position: relative;
+      top: 1px;
+      right: 1px;
+      @include square(26px);
+      margin-right: 12px;
+      background-image: url('../../../../../media/dashboard-icons/case-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/case-icon-blue.png');
+      }
+    }
+
+    &--announcements {
+      position: relative;
+      top: 1px;
+      right: 1px;
+      @include square(26px);
+      margin-right: 12px;
+      background-image: url('../../../../../media/dashboard-icons/case-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/case-icon-blue.png');
+      }
+    }
+
+    &--messages {
+      @include square(22px);
+      margin-right: 16px;
+      background-image: url('../../../../../media/dashboard-icons/message-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/message-icon-blue.png');
+      }
+    }
+
+    &--job-search {
+      background-image: url('../../../../../media/dashboard-icons/search-icon-gray.svg');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/search-icon-blue.svg');
+      }
+    }
+
+    &--jobs {
+      background-image: url('../../../../../media/dashboard-icons/search-icon-gray.svg');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/search-icon-blue.svg');
+      }
+    }
+
+    &--workers {
+      background-image: url('../../../../../media/dashboard-icons/search-icon-gray.svg');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/search-icon-blue.svg');
+      }
+    }
+
+    &--search-workers {
+      background-image: url('../../../../../media/dashboard-icons/search-icon-gray.svg');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/search-icon-blue.svg');
+      }
+    }
+
+    &--settings {
+      @include square(22px);
+      margin-right: 16px;
+      background-image: url('../../../../../media/dashboard-icons/settings-icon-gray.svg');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/settings-icon-blue.svg');
+      }
+    }
+
+    &--help {
+      @include square(22px);
+      margin-right: 16px;
+      background-image: url('../../../../../media/dashboard-icons/help-icon-gray.svg');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/help-icon-blue.svg');
+      }
+    }
+
+    &--logout {
+      @include square(22px);
+      margin-right: 16px;
+      background-image: url('../../../../../media/dashboard-icons/logout-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/logout-icon-blue.png');
+      }
+    }
+
+    &--account {
+      background-image: url('../../../../../media/dashboard-icons/account-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/account-icon-blue.png');
+      }
+    }
+
+    &--user {
+      background-image: url('../../../../../media/dashboard-icons/account-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/account-icon-blue.png');
+      }
+    }
+
+    &--billing {
+      background-image: url('../../../../../media/dashboard-icons/billing-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/billing-icon-blue.png');
+      }
+    }
+
+    &--affiliate {
+      @include square(26px);
+      margin-right: 12px;
+      background-image: url('../../../../../media/dashboard-icons/affiliate-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/affiliate-icon-blue.png');
+      }
+    }
+
+    &--notification {
+      background-image: url('../../../../../media/dashboard-icons/bell-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/bell-icon-blue.png');
+      }
+    }
+
+    &--connection {
+      background-image: url('../../../../../media/dashboard-icons/connection-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/connection-icon-blue.png');
+      }
+    }
+
+    &--privacy {
+      @include square(22px);
+      margin-right: 16px;
+      background-image: url('../../../../../media/dashboard-icons/privacy-icon-gray.svg');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/privacy-icon-blue.svg');
+      }
+    }
+
+    &--security {
+      background-image: url('../../../../../media/dashboard-icons/security-icon-gray.png');
+
+      &--active {
+        background-image: url('../../../../../media/dashboard-icons/security-icon-blue.png');
+      }
+    }
+
+    &--for-settings {
+      margin: 0;
+
+      @include onLaptop {
+        margin-right: 14px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 15px;
+    font-family: $monserrat;
+
+    &--disabled {
+      display: none;
+
+      @include onLaptop {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.notifications {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 1px solid $white-gray;
+  background-color: #fff;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  &__item {
+    padding: $dashboard-padding;
+    border-bottom: 1px solid $white-gray;
+
+    &:hover {
+      background-color: rgb(241, 241, 255);
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+  }
+
+  &__date {
+    color: $gray;
+    font-size: 13px;
+  }
+
+  &__bottom {
+    padding: $dashboard-padding;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    &:hover {
+      background-color: rgb(241, 241, 255);
+    }
+  }
+}

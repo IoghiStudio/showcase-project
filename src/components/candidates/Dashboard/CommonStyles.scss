@@ -1,0 +1,90 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.container {
+  border-radius: $dashboard-padding;
+  background-color: #fff;
+  width: 100%;
+
+  &__title {
+    font-family: $monserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 22px;
+  }
+
+  &__text {
+    font-size: 13px;
+    line-height: 18px;
+    color: $gray;
+    margin-bottom: 20px;
+  }
+
+  &__top {
+    padding: $dashboard-padding $dashboard-padding 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+
+    &-row {
+      display: flex;
+      flex-direction: column;
+
+      @include onTablet {
+        flex-direction: row;
+      }
+
+      &--row-only {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+    width: 100%;
+    margin-bottom: 18px;
+
+    &--first {
+      @include onTablet {
+        margin-right: 40px;
+      }
+
+      @include onDesktop {
+        margin-right: 60px;
+      }
+    }
+  }
+
+  &__select {
+    border-radius: 30px;
+  }
+
+  &__save-btn {
+    height: 32px;
+    width: 160px;
+    align-self: flex-end;
+  }
+
+  &__change-btn {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    width: 160px;
+    color: $blue;
+    letter-spacing: 0.6px;
+    border: 2px solid $blue;
+    text-transform: uppercase;
+    font-family: $monserrat;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+}

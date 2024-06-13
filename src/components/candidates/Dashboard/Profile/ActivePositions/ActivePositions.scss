@@ -1,0 +1,56 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.active-positions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $blue;
+  height: 100%;
+  color: #fff;
+  padding: $dashboard-padding;
+
+  &__headline {
+    margin: 10px 0 18px;
+    font-size: 12px;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 400;
+    font-family: $monserrat;
+
+    &--bold {
+      font-weight: 800;
+      margin-right: 8px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 14px;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__button {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 40px;
+    border-radius: 30px;
+
+    font-family: $monserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.6px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #fff;
+    color: $blue;
+    cursor: pointer;
+  }
+}

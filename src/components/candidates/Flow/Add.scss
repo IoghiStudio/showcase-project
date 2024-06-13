@@ -1,0 +1,221 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.add {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid $white-gray;
+
+    @include onLaptop {
+      flex-direction: row;
+    }
+  }
+
+  &__left {
+    width: 100%;
+
+    @include onLaptop {
+      width: 62%;
+    }
+  }
+
+  &__right {
+    width: 100%;
+
+    @include onLaptop {
+      padding-left: 30px;
+      width: 38%;
+      border-left: 2px solid $white-gray;
+    }
+
+    @include onDesktop {
+      padding-left: 40px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include onLaptop {
+      width: 94%;
+    }
+
+    &--driving {
+      @include onLaptop {
+        flex-direction: row;
+        width: 100%;
+      }
+    }
+  }
+
+  &__area {
+    height: 200px;
+
+    @include onLaptop {
+      height: 100%;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+
+    &--dates {
+      position: relative;
+      @include onLaptop {
+        flex-direction: column;
+      }
+
+      @include onDesktop {
+        flex-direction: row;
+      }
+    }
+
+    &--driving {
+      @include onLaptop {
+        width: 180%;
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__label {
+    width: 100%;
+    margin-bottom: 18px;
+
+    &--first {
+      @include onTablet {
+        margin-right: 40px;
+      }
+    }
+
+    &--desktop-no-mb {
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+
+    &--laptop-no-mb {
+      @include onLaptop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    padding-top: 12px;
+    padding-bottom: 22px;
+
+    @include onLaptop {
+      padding-bottom: 0;
+    }
+
+    &-title {
+      position: relative;
+      top: 1px;
+      font-family: $monserrat;
+      font-size: 12px;
+      line-height: 20px;
+      letter-spacing: 0px;
+    }
+  }
+
+  &__select {
+    border-radius: 30px;
+  }
+
+  &__dates {
+    display: flex;
+    justify-content: space-between;
+
+    &--error {
+      position: absolute;
+      bottom: -4px;
+      right: 10px;
+      color: $red;
+      font-size: 12px;
+
+      &--course {
+        @include onLaptop {
+          bottom: -24px;
+        }
+      }
+
+
+      &--cert {
+        bottom: -24px
+      }
+    }
+  }
+
+  &__date {
+    position: relative;
+    width: 48%;
+
+    &--driving {
+      width: 50%;
+    }
+
+    &--course {
+      @include onLaptop {
+        width: 50%;
+      }
+
+      @include onDesktop {
+        width: 48%;
+      }
+    }
+
+    &--first {
+      @include onLaptop {
+        margin-right: 40px;
+      }
+
+      @include onDesktop {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__present {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    background-color: $white-gray;
+    border-radius: 20px;
+    padding-left: 16px;
+    height: 42px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    color: $gray;
+    cursor: not-allowed;
+  }
+}
+
+.first-date {
+  margin-right: 20px;
+
+  @include onTablet {
+    margin-right: 40px;
+  }
+
+  @include onLaptop {
+    margin-right: 20px;
+  }
+}

@@ -1,0 +1,43 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: $dashboard-padding;
+
+  &__select {
+    border-radius: 30px;
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+
+    &-select {
+      flex-shrink: 0;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+
+    &-input {
+      width: 100%;
+      margin-left: 4px;
+    }
+  }
+
+  &__added {
+    &-container {
+      position: relative;
+      color: $green;
+    }
+
+    position: absolute;
+    left: -62px;
+    bottom: 6px;
+    font-family: $monserrat;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}

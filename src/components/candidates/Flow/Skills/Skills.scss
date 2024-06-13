@@ -1,0 +1,144 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.skills {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 284px;
+    padding-bottom: 18px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid $white-gray;
+
+    @include onLaptop {
+      width: 94%;
+    }
+  }
+
+  &__columns {
+    display: flex;
+    flex-direction: column;
+
+    @include onTabletSmall {
+      flex-direction: row;
+    }
+  }
+
+  &__column {
+    width: 100%;
+
+    @include onTabletSmall {
+      width: 48%;
+    }
+
+    &:first-child {
+      @include onTabletSmall {
+        width: 52%;
+        padding-right: 20px;
+      }
+    }
+
+    &:last-child {
+      @include onTabletSmall {
+        border-left: 2px solid $white-gray;
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &__skill {
+    display: flex;
+
+    &-name {
+      display: flex;
+      align-items: center;
+      height: 34px;
+      padding: 0 20px;
+      margin-bottom: 8px;
+      border: 1px solid $white-gray;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      font-size: 12px;
+      width: 100%;
+    }
+  }
+
+  &__input {
+    height: 42px;
+    padding: 0 20px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: $white-gray;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: 1px solid transparent;
+    color: $black;
+    letter-spacing: 0.2px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 12px;
+      font-style: italic;
+      font-family: $monserrat;
+      color: rgb(170, 170, 170);
+    }
+
+    &--error {
+      border: 1px solid $red;
+    }
+  }
+
+  &__add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    width: 52px;
+    margin-left: 3px;
+    color: $green;
+    font-size: 12px;
+    border: 1px solid $white-gray;
+    text-transform: uppercase;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    cursor: pointer;
+
+    &--disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &__cross {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 42px;
+    margin-left: 3px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 1px solid $white-gray;
+    cursor: pointer;
+
+    &-icon {
+      @include icon;
+      @include square(16px);
+      background-image: url('../../../../media/icons/cross-red.svg');
+    }
+  }
+
+  &__error-message {
+    color: red;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

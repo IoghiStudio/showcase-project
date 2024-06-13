@@ -1,0 +1,103 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.notifi {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 850px) {
+    flex-direction: row;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+
+    @media(min-width: 850px) {
+      width: 65%;
+      margin-right: $dashboard-margin;
+      margin-bottom: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 14px;
+
+    &-top {
+      padding: $dashboard-padding;
+      padding-bottom: 0;
+    }
+
+    &--first {
+      margin-bottom: $dashboard-margin;
+    }
+  }
+
+  &__mail-chimp {
+    height: max-content;
+
+    @media(min-width: 850px) {
+      width: 35%;
+    }
+
+    &-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 14px;
+    }
+
+    &-italic {
+      margin-right: 3px;
+      font-size: 12px;
+      font-style: italic;
+      font-weight: 400;
+      color: $gray;
+    }
+
+    &-name {
+      margin-right: 3px;
+      font-size: 12px;
+      color: $gray;
+      font-weight: 700;
+    }
+
+    &-icon {
+      @include square(32px);
+      @include icon;
+      background-image: url('../../../../../media/dashboard-icons/mailchimp-icon-gray.svg');
+
+      &--auth {
+        @include square(28px);
+        background-image: url('../../../../../media/dashboard-icons/google-auth.png');
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px $dashboard-padding;
+    border-bottom: 1px solid $white-gray;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-family: $monserrat;
+  }
+
+  &__text {
+    font-size: 11px;
+    color: $gray;
+  }
+
+  &__switch {
+    border-radius: 30px;
+    padding-left: 4px;
+  }
+}

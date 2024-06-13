@@ -1,0 +1,26 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.option-pair {
+  display: flex;
+  flex-direction: column;
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 14px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 400;
+    background-color: $green;
+    color: #fff;
+    cursor: pointer;
+
+    &--delete {
+      margin-top: 6px;
+      background-color: $red;
+    }
+  }
+}

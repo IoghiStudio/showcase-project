@@ -1,0 +1,37 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.csignin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  &__login {
+    height: 734px;
+
+    @include onDesktopLarge {
+      margin-left: 50px;
+    }
+  }
+
+  &__divider {
+    height: 680px;
+    display: none;
+    border-right: 2px solid $white-gray;
+    margin-top: 40px;
+
+    @include onDesktopLarge {
+      display: flex;
+    }
+  }
+
+  &__register {
+    margin-right: 50px;
+    display: none;
+
+    @include onDesktopLarge {
+      display: flex;
+    }
+  }
+}

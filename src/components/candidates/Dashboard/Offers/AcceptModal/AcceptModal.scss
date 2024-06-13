@@ -1,0 +1,87 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.accept-modal {
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    position: relative;
+    margin: 0 10px;
+    width: 100%;
+    max-width: 580px;
+    padding: $dashboard-padding;
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.2);
+
+    @include onTablet {
+      padding: 36px;
+    }
+  }
+
+  &__title {
+    font-family: $monserrat;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  &__cross {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    @include icon;
+    @include square(48px);
+    cursor: pointer;
+    background-image: url('../../../../../media/dashboard-icons/cross-icon-gray.png');
+  }
+
+  &__text {
+    font-size: 12px;
+    color: $gray;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    color: $black;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__select {
+    border-radius: 30px;
+  }
+
+  &__label {
+    max-width: 320px;
+  }
+
+  &__ex {
+    position: relative;
+    top: 3px;
+    display: inline-flex;
+    @include icon;
+    @include square(16px);
+    background-image: url('../../../../../media/dashboard-icons/exclamation-icon-black.png');
+  }
+
+  &__button {
+    height: 40px;
+    width: 200px;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+  }
+}

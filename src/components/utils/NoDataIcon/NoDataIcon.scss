@@ -1,0 +1,8 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.no-data-icon {
+  @include icon;
+  @include square(140px);
+  background-image: url('../../../media/icons/hourglass.png');
+}

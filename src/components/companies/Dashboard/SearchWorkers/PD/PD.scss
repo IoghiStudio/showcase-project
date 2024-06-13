@@ -1,0 +1,125 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.pd {
+  display: flex;
+  flex-direction: column;
+  font-family: $monserrat;
+
+  &__container {
+    padding: $dashboard-padding;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-left: 16px;
+    @include square(26px);
+    @include icon;
+    cursor: pointer;
+
+    &--favorite {
+      margin-left: 18px;
+      @include square(24px);
+      background-image: url('../../../../../media/dashboard-icons/star-empty-icon-gray.png');
+
+      &--active {
+        position: relative;
+        left: 1px;
+        margin-left: 17px;
+        @include square(26px);
+        background-image: url('../../../../../media/dashboard-icons/star-icon-gray.png');
+      }
+    }
+
+    &--cv {
+      margin-left: 20px;
+      @include square(22px);
+      background-image: url('../../../../../media/dashboard-icons/cv-download-icon-gray.png');
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__pair {
+    display: flex;
+    flex-direction: column;
+
+    &--second {
+      text-align: right;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    margin-bottom: 2px;
+    color: $gray;
+    font-weight: 500;
+
+    &--b {
+      font-weight: 700;
+      color: $black;
+    }
+  }
+
+  &__mid {
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+    border-top: 1px solid $white-gray;
+    border-bottom: 1px solid $white-gray;
+  }
+
+  &__video-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    align-self: center;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  &__video-container::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__benefit {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+
+    &-icon {
+      margin-right: 12px;
+      @include square(18px);
+      @include icon;
+      background-image: url('../../../../../media/icons/checked-icon.svg');
+    }
+
+    &-text {
+      font-size: 12px;
+    }
+  }
+}

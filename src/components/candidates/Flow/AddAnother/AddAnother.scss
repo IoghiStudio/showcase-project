@@ -1,0 +1,23 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.add-another {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  width: max-content;
+
+  &__icon {
+    @include icon;
+    @include square(16px);
+    background-image: url('../../../../media/icons/plus-green.svg');
+  }
+
+  &__text {
+    margin-left: 12px;
+    color: $green;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

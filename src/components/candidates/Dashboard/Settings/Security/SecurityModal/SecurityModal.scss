@@ -1,0 +1,82 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.security-modal {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &__cross {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    @include icon;
+    @include square(48px);
+    cursor: pointer;
+    background-image: url('../../../../../../media/dashboard-icons/cross-icon-gray.png');
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 14px;
+    padding: $dashboard-padding;
+    background: #fff;
+    max-height: 92vh;
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.2);
+
+    @include onTabletSmall {
+      margin: 30px;
+    }
+
+    @media (min-width: 680px) {
+      max-height: 734px;
+    }
+
+    @include onTablet {
+      width: 640px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-family: $monserrat;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: $gray;
+  }
+
+  &__label {
+    align-self: center;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  &__txt {
+    align-self: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  &__button {
+    align-self: center;
+  }
+}

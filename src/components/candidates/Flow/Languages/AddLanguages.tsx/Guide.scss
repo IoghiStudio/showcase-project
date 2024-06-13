@@ -1,0 +1,32 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.guides {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid $white-gray;
+
+    &:last-child {
+      border: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-family: $monserrat;
+    font-size: 14px;
+    line-height: 22px;
+    cursor: pointer;
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

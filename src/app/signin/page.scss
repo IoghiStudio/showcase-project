@@ -1,0 +1,15 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  @include onDesktop {
+    @include image;
+    background-image: url('../../media/backgrounds/4.jpg');
+    background-position: left;
+  }
+}

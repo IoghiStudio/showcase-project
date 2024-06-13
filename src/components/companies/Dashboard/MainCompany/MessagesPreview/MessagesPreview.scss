@@ -1,0 +1,108 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.m-p {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__see-all {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 30px;
+    border: 1px solid $blue;
+    color: $blue;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    font-family: $monserrat;
+    border-radius: 30px;
+    cursor: pointer;
+
+    @include onTablet {
+      top: 20px;
+      width: 200px;
+      height: 40px;
+    }
+  }
+
+  &__top {
+    padding: $dashboard-padding;
+    padding-bottom: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__chat {
+    display: flex;
+    height: 80px;
+    border-bottom: 1px solid $white-gray;
+    padding: 14px $dashboard-padding;
+    cursor: pointer;
+    overflow: hidden;
+    line-height: 19px;
+
+    &:hover {
+      background-color: #f0f8ff;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__picture {
+    flex-shrink: 0;
+    margin-right: 20px;
+    @include icon;
+    @include circle(46px);
+    background-color: $white-gray;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: $monserrat;
+  }
+
+  &__date {
+    font-size: 12px;
+    color: $gray;
+    font-weight: 400;
+
+    &--green {
+      color: $green;
+    }
+  }
+
+  &__message {
+    display: flex;
+    justify-content: space-between;
+    color: $gray;
+    font-size: 13px;
+  }
+
+  &__unseen-messages {
+    border-radius: 10px;
+    height: 20px;
+    line-height: 20px;
+    background-color: $green;
+    color: #fff;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}

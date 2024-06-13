@@ -1,0 +1,56 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.account {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include onLaptop {
+    flex-direction: row;
+  }
+
+  @include onDesktop {
+    flex-direction: column;
+  }
+
+  @include onDesktopLarge {
+    flex-direction: row;
+  }
+
+  &__picture {
+    margin-bottom: $dashboard-margin;
+
+    @include onLaptop {
+      margin-right: $dashboard-margin;
+      width: 30%;
+    }
+
+    @include onDesktop {
+      width: 48%;
+    }
+
+    @include onDesktopLarge {
+      margin-right: $dashboard-margin;
+      width: 30%;
+    }
+  }
+
+  &__right {
+    @include onLaptop {
+      width: 80%;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+
+    @include onDesktopLarge {
+      width: 80%;
+    }
+  }
+
+  &__info {
+    margin-bottom: $dashboard-margin;
+  }
+}

@@ -1,0 +1,96 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.positions {
+  display: flex;
+  flex-direction: column;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+
+    @include onLaptop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+
+      @media (min-width: 600px) {
+        flex-direction: row;
+        align-items: flex-end;
+      }
+
+      @include onLaptop {
+        margin-bottom: 0;
+      }
+    }
+
+    &-right {
+      align-self: flex-end;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__filter {
+    padding: 4px 4px;
+    font-size: 15px;
+    margin-right: 16px;
+    color: $gray;
+    font-family: $monserrat;
+    cursor: pointer;
+
+    @include onTabletSmall {
+      padding: 4px 8px;
+    }
+
+    &--active {
+      color: $black;
+      font-weight: 600;
+    }
+
+    @include onTabletSmall {
+      margin-right: 30px;
+    }
+  }
+
+  &__active-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+
+    @include onTabletSmall {
+      margin-right: 30px;
+    }
+
+    &-count {
+      align-self: flex-end;
+      font-family: $monserrat;
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    &-text {
+      font-size: 12px;
+    }
+  }
+
+  &__button {
+    padding-bottom: 2px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    margin-bottom: $dashboard-margin;
+  }
+}

@@ -1,0 +1,13 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.offers {
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: $dashboard-margin
+  }
+}

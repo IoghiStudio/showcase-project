@@ -1,0 +1,38 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #fff;
+  padding: 20px 0;
+
+  &__logo {
+    flex-shrink: 0;
+    align-self: center;
+    margin: 12px 0 20px;
+    width: 230px;
+    @include icon;
+    height: 40px;
+    background-image: url('../../../../media/logos/logo-color.svg');
+
+    @media (min-width: 400px) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    width: 342px;
+  }
+
+  &__section {
+    margin-bottom: 6px;
+  }
+
+  &__footer  {
+
+  }
+}

@@ -1,0 +1,300 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 75px 20px 80px;
+
+  @include onTablet {
+    padding: 75px 60px 80px;
+  }
+
+  // background-image: url('../../../../media/backgrounds/1.jpg');
+  background-color: #cd8bf7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__top {
+    margin-bottom: 47px;
+
+    @include onTablet {
+      margin-bottom: 51px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 31px;
+    font-family: $monserrat;
+    font-size: 42px;
+    line-height: 51px;
+    font-weight: 900;
+    text-align: center;
+    color: $white-gray-2;
+
+    @include onTablet {
+      margin-bottom: 21px;
+    }
+  }
+
+  &__text {
+    max-width: 725px;
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 400;
+    text-align: center;
+    color: $white-gray-2;
+
+    @include onTablet {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  &__posts {
+    display: flex;
+    align-self: flex-start;
+    max-width: 1200px;
+    margin-bottom: 60px;
+    overflow: hidden;
+
+    @include onTablet {
+      margin-bottom: 62px;
+      align-self: center;
+    }
+
+    @include onLaptop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__post {
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 34px 34px 22px;
+    background-color: $white-gray-2;
+    border-right: 1px solid #d6d6d6;
+
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    @include onTablet {
+      min-width: 0px;
+      &:last-child {
+        border: 0;
+      }
+    }
+
+    &-top {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      margin-bottom: 6px;
+      font-family: $monserrat;
+      font-weight: 900;
+      color: $black;
+      font-size: 28px;
+      line-height: 31px;
+
+      @include onLaptop {
+        margin-bottom: 7px;
+        font-size: 32px;
+        line-height: 36px;
+      }
+    }
+
+    &-text {
+      margin-bottom: 48px;
+      font-weight: 400;
+      color: $black;
+      font-size: 14px;
+      line-height: 21px;
+
+      @include onTablet {
+        font-weight: 500;
+      }
+
+      @include onLaptop {
+        margin-bottom: 56px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__headline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+
+    &-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      @include onLaptop {
+        gap: 11px;
+      }
+    }
+  }
+
+  &__date {
+    font-family: $monserrat;
+    font-weight: 600;
+    color: $gray;
+    font-size: 11px;
+    line-height: 17px;
+    letter-spacing: 1.26px;
+    text-transform: uppercase;
+
+    @include onLaptop {
+      font-size: 12px;
+      line-height: 20px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__icon {
+    width: 15px;
+    height: 13px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include onLaptop {
+      width: 16px;
+      height: 14px;
+    }
+
+    &--job {
+      background-image: url('../../../../media/icons/jobalert-icon.svg');
+    }
+
+    &--blog {
+      background-image: url('../../../../media/icons/blognews-icon.svg');
+    }
+  }
+
+  &__category {
+    font-family: $monserrat;
+    font-weight: 400;
+    color: $gray;
+    font-size: 11px;
+    line-height: 17px;
+    letter-spacing: 1.26px;
+    text-transform: uppercase;
+    text-decoration: underline;
+
+    @include onLaptop {
+      font-size: 12px;
+      line-height: 20px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__bottomline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-left {
+      display: flex;
+      gap: 8px;
+
+      @include onLaptop {
+        gap: 9px;
+      }
+    }
+
+    &-right {
+      text-transform: uppercase;
+      font-family: $monserrat;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 1.26px;
+      color: $black;
+      cursor: pointer;
+      border-bottom: 1px solid $gray;
+    }
+  }
+
+  &__person-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: linear-gradient(#594696, rgb(49, 51, 199));
+
+    @include onLaptop {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__author {
+    margin-top: 6px;
+    font-family: $monserrat;
+    font-weight: 400;
+    color: $black;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.22px;
+
+    @include onLaptop {
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+
+  &__job {
+    font-family: $monserrat;
+    font-weight: 400;
+    color: $black;
+    font-size: 11px;
+    line-height: 16px;
+    color: $gray;
+
+    @include onLaptop {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 240px;
+    height: 50px;
+    background-color: $blue;
+    border-radius: 30px;
+
+    font-family: $monserrat;
+    color: #fff;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+}

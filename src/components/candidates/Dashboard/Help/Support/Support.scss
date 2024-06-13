@@ -1,0 +1,102 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.support {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  background-color: $blue;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #fff;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $dashboard-padding;
+  }
+
+  &__headline {
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-family: $monserrat;
+    font-weight: 800;
+  }
+
+  &__subline {
+    margin-bottom: 24px;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  &__columns {
+    display: flex;
+    flex-direction: column;
+
+    @include onTabletSmall {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include onLaptop {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+
+    @include onTabletSmall {
+      // margin-bottom: 0;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  &__check {
+    flex-shrink: 0;
+    margin-right: 6px;
+    @include icon;
+    @include circle(18px);
+    background-image: url('../../../../../media/icons/checked-icon.svg');
+  }
+
+  &__text {
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  &__btn {
+    display: flex;
+    height: 40px;
+    padding: 0 20px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $green;
+    border-radius: 30px;
+    font-family: $monserrat;
+    letter-spacing: 0.6px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,109 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.view-job {
+  display: flex;
+  flex-direction: column;
+
+  @include onLaptop {
+    flex-direction: row;
+  }
+
+  @include onDesktop {
+    flex-direction: column;
+  }
+
+  @media (min-width: 1600px) {
+    flex-direction: row;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $dashboard-margin;
+
+    @include onLaptop {
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+      width: 65%;
+    }
+
+    @include onDesktop {
+      margin-right: 0;
+      margin-bottom: $dashboard-margin;
+      width: 100%;
+    }
+
+    @media (min-width: 1600px) {
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+      width: 65%;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      width: 35%;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+
+    @media (min-width: 1600px) {
+      width: 35%;
+    }
+  }
+
+  &__about {
+    margin-bottom: $dashboard-margin;
+  }
+
+  &__blue-box {
+    order: 0;
+    width: 100%;
+    margin-bottom: $dashboard-margin;
+  }
+
+  &__btn-review {
+    background-color: $blue;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: default;
+  }
+
+  &__mb-desk {
+    display: none;
+
+    @include onLaptop {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @media (min-width: 1600px) {
+      display: flex;
+    }
+  }
+
+  &__lp-desk-lg {
+    display: flex;
+
+    @include onLaptop {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+
+    @media (min-width: 1600px) {
+      display: none;
+    }
+  }
+}

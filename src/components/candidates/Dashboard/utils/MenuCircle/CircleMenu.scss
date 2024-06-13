@@ -1,0 +1,23 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.circle-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include circle(36px);
+  border: 1px solid $gray;
+  font-size: 9px;
+  color: $gray;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $white-gray;
+    border-color: transparent
+  }
+
+  &--active {
+    background-color: $white-gray;
+    border-color: transparent
+  }
+}

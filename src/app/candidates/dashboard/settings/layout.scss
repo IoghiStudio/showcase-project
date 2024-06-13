@@ -1,0 +1,24 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.settings {
+  display: flex;
+  flex-direction: column;
+
+  @include onLaptop {
+    flex-direction: row;
+  }
+
+  &__menu {
+    margin-bottom: $dashboard-margin;
+
+    @include onLaptop {
+      margin: 0;
+      margin-right: $dashboard-margin;
+    }
+  }
+
+  &__children {
+    width: 100%;
+  }
+}

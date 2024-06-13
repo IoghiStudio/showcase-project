@@ -1,0 +1,376 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.subscription {
+  display: flex;
+  flex-direction: column;
+
+  &__mid {
+    display: flex;
+    width: 100%;
+  }
+
+  &__right {
+    display: none;
+
+    @include onLaptop {
+      display: flex;
+      padding-left: 30px;
+      width: 38%;
+      border-left: 2px solid $white-gray;
+    }
+
+    @include onDesktop {
+      padding-left: 40px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+
+    @include onLaptop {
+      width: 62%;
+    }
+
+    &--dash {
+      display: flex;
+
+      @include onLaptop {
+        width: 100%;
+      }
+    }
+  }
+
+  &__plan-type {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &-box {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      width: max-content;
+      height: 22px;
+      padding: 0 12px;
+      background-color: $white-gray;
+      border-radius: 10px;
+
+      &--active {
+        background-color: $blue;
+        color: #fff;
+      }
+    }
+  }
+
+  &__switch {
+    margin: 0 6px;
+
+    @media (min-width: 350px) {
+      margin: 0 12px;
+    }
+  }
+
+  &__plans {
+    display: flex;
+    flex-direction: column;
+
+    &--dash {
+      width: 100%;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      // min-height: 284px;
+      min-height: 140px;
+      padding-bottom: 18px;
+      margin-bottom: 30px;
+      border-bottom: 2px solid $white-gray;
+
+      @include onLaptop {
+        width: 94%;
+      }
+
+      &--dash {
+        margin-bottom: 0;
+        border: 0;
+        padding: 0;
+
+        @include onLaptop {
+          width: 100%;
+        }
+
+        @media (min-width: 1600px) {
+          width: 65%;
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  &__description {
+    @include onLaptop {
+      display: none;
+    }
+  }
+}
+
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px 24px;
+  background-color: #fff;
+  border: 2px solid $blue;
+  border-radius: 20px;
+  cursor: pointer;
+
+  @media (min-width: 600px) {
+    height: 66px;
+    padding: 0 24px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--first {
+    @media (min-width: 600px) {
+      height: 100px;
+    }
+  }
+
+  &--active {
+    background-color: $blue;
+    color: #fff;
+  }
+
+  &__first-plan-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    color: $gray;
+
+    &--active {
+      color: #fff;
+    }
+
+    &-months {
+      margin-left: 4px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+  }
+
+  &__tag {
+    position: absolute;
+    top: -11px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    height: 22px;
+    padding: 0 12px;
+    width: max-content;
+    font-family: $monserrat;
+    font-size: 12px;
+    color: #fff;
+    background-color: $green;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    @media (min-width: 600px) {
+      left: 70px;
+      right: auto;
+    }
+
+    &--yearly {
+      left: 50%;
+      transform: translateX(-50%);
+
+      @media (min-width: 780px) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @include onLaptop {
+        top: -11px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @include onDesktop {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &--dash {
+      @media (min-width: 780px) {
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-family: $monserrat;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-family: $monserrat;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__checkbox {
+    margin-right: 10px;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    color: $gray;
+
+    @media (min-width: 600px) {
+      align-self: center;
+    }
+
+    &--active {
+      color: #fff;
+    }
+
+    &--anual {
+      align-items: flex-end;
+    }
+
+    &-info {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &-text {
+      align-self: flex-end;
+      font-size: 10px;
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: 0.1px;
+
+      &--active {
+        color: #fff;
+      }
+    }
+  }
+
+  &__currency {
+    position: relative;
+    top: -10px;
+    font-family: $monserrat;
+    color: $blue;
+    font-size: 24px;
+    line-height: 100%;
+    font-weight: 900;
+
+    &--active {
+      color: #fff;
+    }
+
+    @media (min-width: 600px) {
+      top: -20px;
+      font-size: 34px;
+    }
+  }
+
+  &__price {
+    margin-right: 6px;
+    font-family: $monserrat;
+    color: $blue;
+    font-size: 36px;
+    line-height: 100%;
+    font-weight: 900;
+
+    &--active {
+      color: #fff;
+    }
+
+    @media (min-width: 600px) {
+      font-size: 56px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    text-align: right;
+
+    &--italic {
+      font-style: italic;
+    }
+  }
+
+  &__per {
+    margin-left: 4px;
+  }
+
+  &__price-yearly {
+    font-family: $monserrat;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__for {
+    display: flex;
+    margin-bottom: 6px;
+    font-size: 18px;
+    line-height: 20px;
+    color: $gray;
+    font-weight: 400;
+
+    &--active {
+      color: #fff;
+    }
+  }
+
+  &__months {
+    margin-left: 4px;
+    font-weight: 900;
+  }
+}
+
+.under-text {
+  position: relative;
+  top: -16px;
+  order: -1;
+  font-size: 16px;
+  font-weight: 600px;
+  font-family: $monserrat;
+
+  @include onLaptop {
+    top: 0;
+    order: 1;
+  }
+}

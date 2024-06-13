@@ -1,0 +1,106 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.plans {
+  display: flex;
+  flex-direction: column;
+  padding: $dashboard-padding;
+
+  &__right {
+    display: none;
+    flex-direction: column;
+
+    @media (min-width: 1600px) {
+      display: flex;
+      width: 35%;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+
+    @media (min-width: 1600px) {
+      display: none;
+    }
+
+    &--right {
+      margin: 0;
+      margin-top: 40px;
+
+      @media (min-width: 1600px) {
+        display: flex;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-family: $monserrat;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    color: $gray;
+    font-size: 13px;
+    margin-bottom: 30px;
+
+    &-icon {
+      margin-right: 4px;
+      @include circle(6px);
+      background-color: $black;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    &--second {
+      padding-bottom: 20px;
+      border-bottom: 1px solid $white-gray;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__pair {
+    display: flex;
+    flex-direction: column;
+    color: $gray;
+
+    &--second {
+      align-items: flex-end;
+    }
+
+    &-title {
+      font-size: 16px;
+
+      &--black {
+        color: $black;
+      }
+    }
+
+    &-text {
+      font-size: 12px;
+    }
+  }
+
+  &__btn {
+    align-self: flex-end;
+    display: flex;
+    border-radius: 30px;
+    width: 180px;
+    height: 36px;
+    margin-bottom: 12px;
+  }
+}

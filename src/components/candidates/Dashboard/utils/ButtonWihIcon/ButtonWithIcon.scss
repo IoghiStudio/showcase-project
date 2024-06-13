@@ -1,0 +1,112 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.b-w-i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 44px;
+  border-radius: 30px;
+  cursor: pointer;
+
+  &--long {
+    width: 260px;
+  }
+
+  &--bg {
+    &-white {
+      background-color: #fff;
+    }
+
+    &-blue {
+      background-color: $blue;
+    }
+
+    &-green {
+      background-color: $green;
+    }
+
+    &-red {
+      background-color: $red;
+    }
+
+    &-gray {
+      background-color: $gray;
+    }
+  }
+
+  &--color {
+    &-white {
+      color: #fff;
+    }
+
+    &-blue {
+      color: $blue;
+    }
+
+    &-green {
+      color: $green;
+    }
+
+    &-red {
+      color: $red;
+    }
+
+    &-gray {
+      color: $gray;
+    }
+  }
+
+  &--border {
+    &-white {
+      border: 2px solid #fff;
+    }
+
+    &-blue {
+      border: 2px solid $blue;
+    }
+
+    &-green {
+      border: 2px solid $green;
+    }
+
+    &-red {
+      border: 2px solid $red;
+    }
+
+    &-gray {
+      border: 2px solid $gray;
+    }
+  }
+
+  &__icon {
+    margin-right: 14px;
+    flex-shrink: 0;
+    @include icon;
+    @include square(18px);
+
+    &--check {
+      background-image: url('../../../../../media/dashboard-icons/checkmark-icon-white.svg');
+    }
+
+    &--plus {
+      @include square(20px);
+      margin-right: 12px;
+      background-image: url('../../../../../media/dashboard-icons/plus-icon-white.svg');
+    }
+
+    &--plus-blue {
+      @include square(20px);
+      margin-right: 12px;
+      background-image: url('../../../../../media/dashboard-icons/plus-circle-icon-blue.svg');
+    }
+  }
+
+  &__text {
+    padding-right: 10px;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    font-family: $monserrat;
+  }
+}

@@ -1,0 +1,104 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.flow-data-container {
+  display: flex;
+  flex-direction: column;
+  padding: $dashboard-padding 0;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px;
+    margin-bottom: 12px;
+
+    @media (min-width: 660px) {
+      padding: 0 $dashboard-padding;
+    }
+
+    @media (min-width: 520px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: 20px;
+    flex-shrink: 0;
+    @include square(40px);
+    @include icon;
+
+    &--experience {
+      @include square(32px);
+      margin-right: 28px;
+      background-image: url('../../../../../media/dashboard-icons/offers-icon-blue.png');
+    }
+
+    &--education {
+      background-image: url('../../../../../media/dashboard-icons/school-icon-blue.png');
+    }
+
+    &--course {
+      background-image: url('../../../../../media/dashboard-icons/learning-icon-blue.png');
+    }
+
+    &--nationality {
+      background-image: url('../../../../../media/dashboard-icons/announce-worldwide-icon-blue.png');
+    }
+
+    &--certification {
+      background-image: url('../../../../../media/dashboard-icons/certificate-icon-blue.png');
+    }
+
+    &--driving {
+      background-image: url('../../../../../media/dashboard-icons/car-icon-blue.png');
+    }
+
+    &--language {
+      background-image: url('../../../../../media/dashboard-icons/translate-language-icon-blue.png');
+    }
+
+    &--about {
+      background-image: url('../../../../../media/dashboard-icons/about-me-icon-blue.png');
+    }
+
+    &--skills {
+      background-image: url('../../../../../media/dashboard-icons/skills-icon-blue.png');
+    }
+  }
+
+  &__text {
+    margin-bottom: 0;
+  }
+
+  &__add-btn {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    margin-top: 8px;
+    width: max-content;
+    padding: 0 14px;
+
+    @media (min-width: 520px) {
+      align-self: auto;
+      margin-top: 0px;
+    }
+
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    background-color: #fff;
+    color: $green;
+    border-radius: 30px;
+    border: 1px solid $green;
+    cursor: pointer;
+  }
+}

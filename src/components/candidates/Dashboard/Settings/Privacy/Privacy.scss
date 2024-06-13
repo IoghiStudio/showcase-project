@@ -1,0 +1,41 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.privacy {
+  display: flex;
+  flex-direction: column;
+
+  @include onTablet {
+    flex-direction: row;
+  }
+
+  &__visibility {
+    margin-bottom: $dashboard-margin;
+
+    @include onTablet {
+      width: 65%;
+      margin-bottom: 0;
+      margin-right: $dashboard-margin;
+    }
+  }
+
+  &__right {
+    height: max-content;
+
+    &-top {
+      padding: $dashboard-padding;
+      padding-bottom: 0;
+    }
+
+    @include onTablet {
+      width: 35%;
+    }
+
+    &-bottom {
+      font-size: 11px;
+      color: $gray;
+      font-style: italic;
+      padding: $dashboard-padding;
+    }
+  }
+}

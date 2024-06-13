@@ -1,0 +1,196 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-title {
+    margin-top: 5px;
+    text-transform: uppercase;
+    font-size: 8px;
+
+    &--done {
+      color: $green;
+    }
+
+    &--current {
+      color: $gray;
+    }
+
+    &--undone {
+      color: #c9c9c9;
+    }
+  }
+
+  &-icon {
+    @include circle(44px);
+    @include icon;
+
+    &--info {
+      &-done {
+        cursor: pointer;
+        background-image: url('../../../media/flow-steps/registration-information-done.svg');
+      }
+
+      &-current {
+        background-image: url('../../../media/flow-steps/registration-information-current.svg');
+      }
+
+      &-undone {
+        background-image: url('../../../media/flow-steps/registration-information-undone.svg');
+      }
+    }
+
+    &--residency {
+      &-done {
+        cursor: pointer;
+        background-image: url('../../../media/flow-steps/registration-residency-done.svg');
+      }
+
+      &-current {
+        background-image: url('../../../media/flow-steps/registration-residency-current.svg');
+      }
+
+      &-undone {
+        background-image: url('../../../media/flow-steps/registration-residency-undone.svg');
+      }
+    }
+
+    &--experience {
+      &-done {
+        cursor: pointer;
+        background-image: url('../../../media/flow-steps/register-job-experience-done.svg');
+      }
+
+      &-current {
+        background-image: url('../../../media/flow-steps/register-job-experience-current.svg');
+      }
+
+      &-undone {
+        background-image: url('../../../media/flow-steps/register-job-experience-undone.svg');
+      }
+    }
+
+    &--education {
+      &-done {
+        cursor: pointer;
+        background-image: url('../../../media/flow-steps/register-education-done.svg');
+      }
+
+      &-current {
+        background-image: url('../../../media/flow-steps/register-education-current.svg');
+      }
+
+      &-undone {
+        background-image: url('../../../media/flow-steps/register-education-undone.svg');
+      }
+    }
+
+    &--certifications {
+      &-done {
+        cursor: pointer;
+        background-image: url('../../../media/flow-steps/register-certifications-done.svg');
+      }
+
+      &-current {
+        background-image: url('../../../media/flow-steps/register-certifications-current.svg');
+      }
+
+      &-undone {
+        background-image: url('../../../media/flow-steps/register-certifications-undone.svg');
+      }
+    }
+
+    &--courses {
+      &-done {
+        cursor: pointer;
+        background-image: url('../../../media/flow-steps/registration-courses-done.svg');
+      }
+
+      &-current {
+        background-image: url('../../../media/flow-steps/registration-courses-current.svg');
+      }
+
+      &-undone {
+        background-image: url('../../../media/flow-steps/registration-courses-undone.svg');
+      }
+    }
+
+    &--language {
+      &-done {
+        cursor: pointer;
+        background-image: url('../../../media/flow-steps/registration-language-done.svg');
+      }
+
+      &-current {
+        background-image: url('../../../media/flow-steps/registration-language-current.svg');
+      }
+
+      &-undone {
+        background-image: url('../../../media/flow-steps/registration-language-undone.svg');
+      }
+    }
+
+    &--driving {
+      &-done {
+        cursor: pointer;
+        background-image: url('../../../media/flow-steps/registration-driving-done.svg');
+      }
+
+      &-current {
+        background-image: url('../../../media/flow-steps/registration-driving-current.svg');
+      }
+
+      &-undone {
+        background-image: url('../../../media/flow-steps/registration-driving-undone.svg');
+      }
+    }
+
+    &--picture {
+      &-done {
+        cursor: pointer;
+        background-image: url('../../../media/flow-steps/registration-picture-done.svg');
+      }
+
+      &-current {
+        background-image: url('../../../media/flow-steps/registration-picture-current.svg');
+      }
+
+      &-undone {
+        background-image: url('../../../media/flow-steps/registration-picture-undone.svg');
+      }
+    }
+
+    &--subscription {
+      &-done {
+        cursor: pointer;
+        background-image: url('../../../media/flow-steps/registration-subscription-done.svg');
+      }
+
+      &-current {
+        background-image: url('../../../media/flow-steps/registration-subscription-current.svg');
+      }
+
+      &-undone {
+        background-image: url('../../../media/flow-steps/registration-subscription-undone.svg');
+      }
+    }
+
+    &--skills {
+      &-done {
+        cursor: pointer;
+        background-image: url('../../../media/flow-steps/registration-information-done.svg');
+      }
+
+      &-current {
+        background-image: url('../../../media/flow-steps/registration-information-current.svg');
+      }
+
+      &-undone {
+        background-image: url('../../../media/flow-steps/registration-information-undone.svg');
+      }
+    }
+  }
+}

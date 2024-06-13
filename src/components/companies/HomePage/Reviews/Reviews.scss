@@ -1,0 +1,226 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  color: $black;
+
+  @include onTablet {
+    padding: 90px;
+  }
+
+  &__headline {
+    max-width: 525px;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 17px;
+    font-family: $monserrat;
+    text-align: center;
+    font-size: 30px;
+    line-height: 37px;
+    font-weight: 900;
+
+    @include onTablet {
+      margin-bottom: 26px;
+      font-size: 42px;
+      line-height: 52px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+
+    @include onTablet {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  &__arrow {
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 38px;
+      width: 38px;
+      cursor: pointer;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    width: 11px;
+    height: 19px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../../../../media/icons/arrow-gray.svg');
+
+    &--right {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__customers {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin-bottom: 82px;
+    // margin-bottom: 44px;
+    // background-color: $blue;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__customer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    &-icon {
+      margin-bottom: 17px;
+      width: 19px;
+      height: 14px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('../../../../media/icons/customers-icon.svg');
+    }
+
+    &-text {
+      padding: 0 30px;
+      margin-bottom: 34px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+
+    &-image {
+      &-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+
+        @include onTablet {
+          justify-content: center;
+        }
+      }
+
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-image: url('../../../../media/img/profile-me.jpg');
+      @include icon;
+      background-size: cover;
+    }
+
+    &-name {
+      font-family: $monserrat;
+      font-size: 16px;
+      line-height: 28px;
+      font-weight: 400;
+    }
+
+    &-bottomline {
+      margin-bottom: 28px;
+      color: $gray;
+      font-size: 12px;
+      line-height: 28px;
+      font-weight: 400;
+    }
+  }
+
+  &__trustpilot {
+    display: flex;
+    align-items: center;
+
+    &-text {
+      display: none;
+      margin-right: 10px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27px;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &-stars {
+      margin-right: 10px;
+      width: 100px;
+      height: 20px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('../../../../media/logos/trustpilot-stars.png');
+    }
+
+    &-count {
+      display: none;
+      margin-right: 10px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('../../../../media/icons/trustpilot-icon-star.png');
+    }
+
+    &-title {
+      position: relative;
+      top: 2px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    gap: 10px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border: 2px solid $gray;
+    border-radius: 50%;
+
+    &--active {
+      background-color: $gray;
+    }
+  }
+}

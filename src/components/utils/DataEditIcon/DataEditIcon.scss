@@ -1,0 +1,9 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.data-edit-icon {
+  background-image: url('../../../media/icons/edit-square-icon.svg');
+  @include icon;
+  @include square(22px);
+  cursor: pointer;
+}

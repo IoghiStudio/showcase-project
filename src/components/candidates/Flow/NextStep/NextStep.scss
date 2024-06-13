@@ -1,0 +1,37 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+
+.next-step {
+  display: flex;
+  flex-direction: column;
+
+  @include onTabletSmall {
+    flex-direction: row;
+  }
+
+  &__button {
+    flex-shrink: 0;
+    margin-bottom: 28px;
+    height: 50px;
+    width: 184px;
+
+    @include onTabletSmall {
+      margin: 0;
+      margin-right: 28px;
+    }
+  }
+
+  &__text {
+    line-height: 22px;
+    font-size: 14px;
+    color: $black;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+}

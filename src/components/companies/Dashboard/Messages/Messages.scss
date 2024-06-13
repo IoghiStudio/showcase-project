@@ -1,0 +1,483 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.messages {
+  display: flex;
+  height: calc(100vh - 204px);
+
+  @include onTablet {
+    height: calc(100vh - 210px);
+  }
+
+  @include onLaptop {
+    height: calc(100vh - 232px);
+  }
+
+  @include onDesktop {
+    height: calc(100vh - 144px);
+  }
+
+  @include onDesktopLarge {
+    height: calc(100vh - 164px);
+  }
+
+  @media (min-width: 1600px) {
+    height: calc(100vh - 184px);
+  }
+
+
+  &__inbox {
+    border-right: 2px solid $white-gray;
+  }
+
+  &__chat {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px;
+    justify-content: center;
+    height: 100%;
+    background-color: $white-gray-2;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    &-title {
+      text-align: center;
+      margin-bottom: 26px;
+      font-weight: 400;
+      font-size: 17px;
+    }
+
+    &-text {
+      margin-bottom: 18px;
+      text-align: center;
+      color: $gray;
+      font-size: 12px;
+      font-weight: 400;
+      max-width: 472px;
+    }
+
+    &-ecrypt {
+      display: flex;
+      align-items: center;
+
+      &-icon {
+        margin-right: 8px;
+        @include icon;
+        @include square(20px);
+        background-image: url('../../../../media/dashboard-icons/ecrypt-lock-icon-gray.svg');
+      }
+
+      &-text {
+        font-size: 13px;
+        font-weight: 400;
+      }
+    }
+
+  }
+}
+
+.inbox {
+  position: relative;
+  height: 100%;
+  width: 70px;
+
+  @include onTablet {
+    width: 340px;
+  }
+
+  &__menu {
+    position: absolute;
+    z-index: 10000;
+    top: 20px;
+    left: 18px;
+    display: flex;
+    flex-direction: column;
+
+
+    @include onTablet {
+      display: none;
+    }
+
+    &-circle {
+      display: inline-flex;
+      border-radius: 50%;
+      margin-bottom: 2px;
+    }
+
+    &-settings {
+      position: absolute;
+      top: 0;
+      left: 38px;
+      display: flex;
+      flex-direction: column;
+      width: 140px;
+      border-radius: 8px;
+      border: 1px solid $white-gray;
+      background-color: #fff;
+    }
+
+    &-item {
+      padding: 8px 12px;
+      border-bottom: 1px solid $white-gray;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+    padding-bottom: 90px;
+
+    @include onTablet {
+      padding-bottom: $dashboard-padding;
+    }
+  }
+
+  &__title {
+    display: none;
+    margin-bottom: 20px;
+    font-family: $monserrat;
+    font-size: 18px;
+    font-weight: 700;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--gray {
+      color: $gray;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__types {
+    display: none;
+    justify-content: space-between;
+    border-radius: 30px;
+    background-color: #ddeeff;
+    padding: 4px;
+    margin-bottom: 30px;
+    width: 50%;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    border-radius: 30px;
+    font-size: 13px;
+    width: 100%;
+    color: $gray;
+    transition-property: color, background-color;
+    transition-duration: 200ms;
+    cursor: pointer;
+
+    &--active {
+      background-color: #fff;
+      color: $black;
+    }
+  }
+
+  &__chats {
+    height: calc(100vh - 204px - 195px);
+    overflow-y: auto;
+
+    @include onTablet {
+      height: calc(100vh - 210px - 195px);
+    }
+
+    @include onLaptop {
+      height: calc(100vh - 232px - 195px);
+    }
+
+    @include onDesktop {
+      height: calc(100vh - 232px - 195px);
+    }
+  }
+
+  &__chat {
+    display: flex;
+    height: 66px;
+    border-bottom: 1px solid $white-gray;
+    padding: 10px 10px;
+    cursor: pointer;
+
+    @include onTablet {
+      padding: 14px $dashboard-padding;
+      height: 74px;
+    }
+
+    &--active {
+      background-color: #f0f8ff;
+    }
+
+    &-right {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__picture {
+    flex-shrink: 0;
+    margin-right: 20px;
+    @include icon;
+    @include circle(46px);
+    background-color: $white-gray;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: $monserrat;
+  }
+
+  &__date {
+    flex-shrink: 0;
+    font-size: 12px;
+    color: $gray;
+    font-weight: 400;
+
+    &--green {
+      color: $green;
+    }
+  }
+
+  &__message {
+    display: flex;
+    justify-content: space-between;
+    color: $gray;
+    font-size: 13px;
+  }
+
+  &__unseen-messages {
+    border-radius: 10px;
+    height: 20px;
+    line-height: 20px;
+    background-color: $green;
+    color: #fff;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  &__type-text {
+    position: relative;
+    left: -14px;
+    font-size: 9px;
+    color: $gray;
+    text-transform: uppercase;
+  }
+}
+
+.chat {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+
+  &__top {
+    padding: 16px;
+    display: flex;
+    border-bottom: 2px solid $white-gray;
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__picture {
+    &-container {
+      margin-right: 16px;
+      border: 1px solid $white-gray;
+      @include circle(56px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      &--company {
+        border-radius: 12px;
+      }
+    }
+
+    flex-shrink: 0;
+    @include icon;
+    border-radius: 50%;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+
+    &--company {
+      border-radius: 12px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-family: $monserrat;
+
+    @include onTablet {
+      font-size: 18px;
+    }
+  }
+
+  &__residency {
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      flex-shrink: 0;
+      position: relative;
+      left: -2px;
+      margin-right: 8px;
+      @include icon;
+      @include square(16px);
+      background-image: url('../../../../media/dashboard-icons/user-data/location-icon-gray.png');
+    }
+
+    &-text {
+      font-family: $monserrat;
+      font-size: 13px;
+    }
+  }
+
+  &__messages {
+    display: flex;
+    flex-direction: column;
+    padding: $dashboard-padding;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @include onDesktop {
+      width: calc(100vw - 740px);
+    }
+
+    @include onDesktopLarge {
+      width: calc(100vw - 760px);
+    }
+
+    @media (min-width: 1600px) {
+      width: calc(100vw - 780px);
+    }
+  }
+
+  &__message {
+    position: relative;
+    padding: 10px;
+    width: max-content;
+    max-width: 70%;
+    margin-bottom: 24px;
+    background-color: #f0f8ff;
+    font-size: 13px;
+    border-radius: 12px;
+    border-top-left-radius: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    &--right {
+      align-self: flex-end;
+      border-radius: 12px;
+      border-bottom-right-radius: 0;
+      background-color: $blue;
+      color: #fff;
+    }
+
+    &-date {
+      position: absolute;
+      color: $gray;
+      width: 170px;
+      bottom: -13px;
+      font-size: 10px;
+
+      &--right {
+        text-align: right;
+        right: 0;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 0 $dashboard-padding $dashboard-padding 14px;
+
+    &-options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+
+      &-side {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &__query {
+    width: 100%;
+    height: 46px;
+    padding: 10px 30px;
+    background-color: #f0f8ff;
+    border: 0;
+    border-bottom: 2px solid $blue;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    resize: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 16px 0 12px;
+    border-radius: 30px;
+    background-color: $blue;
+    cursor: pointer;
+
+    &-icon {
+      margin-right: 8px;
+      @include icon;
+      @include square(22px);
+      background-image: url('../../../../media/dashboard-icons/sent-message-icon-white.png');
+    }
+
+    &-text {
+      font-family: $monserrat;
+      letter-spacing: 1px;
+      font-size: 12px;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.save-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--add {
+    @media (min-width: 400px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__button {
+    width: 160px;
+    height: 40px;
+
+    &--add {
+      margin-bottom: 14px;
+
+      @media (min-width: 600px) {
+        margin: 0;
+      }
+    }
+
+    &--for-add {
+      @media (min-width: 400px) {
+        margin: 0;
+      }
+    }
+
+    &--delete {
+      margin-top: 14px;
+
+      @media (min-width: 410px) {
+        margin-left: 14px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 410px) {
+      flex-direction: row;
+    }
+  }
+}

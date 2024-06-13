@@ -1,0 +1,213 @@
+@import "@/styles/vars";
+@import "@/styles/mixins";
+
+.education {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: 284px;
+    padding-bottom: 18px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid $white-gray;
+
+    @include onLaptop {
+      width: 94%;
+    }
+  }
+
+  &__data {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__containers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    color: $black;
+    border-bottom: 1px solid rgba(110, 110, 110, 0.4);
+
+    @include onTablet {
+      flex-direction: row;
+    }
+
+    @include onLaptop {
+      flex-direction: column;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+
+    &:last-child {
+      border: 0;
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+
+      @include onTablet {
+        margin-right: 20px;
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include onTablet {
+        justify-content: flex-start;
+      }
+
+      @include onLaptop {
+        justify-content: space-between;
+      }
+
+      @include onDesktop {
+        justify-content: flex-start;
+      }
+    }
+
+    &-date {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      margin-right: 24px;
+      letter-spacing: 0.5px;
+      text-align: left;
+      font-size: 14px;
+      line-height: 22px;
+
+      @include onTablet {
+        text-align: right;
+      }
+
+      @include onLaptop {
+        text-align: left;
+      }
+
+      @include onDesktop {
+        text-align: right;
+      }
+
+      &-title {
+        font-weight: 700;
+      }
+
+      &-text {
+        font-weight: 400;
+      }
+
+      &-left {
+        width: 140px;
+      }
+
+      &-right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 170px;
+      }
+    }
+
+    &-edit {
+      flex-shrink: 0;
+      background-image: url('../../../../media/icons/edit-square-icon.svg');
+      @include icon;
+      @include square(22px);
+      cursor: pointer;
+    }
+  }
+
+  &__job-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+
+  &__flag {
+    display: inline-flex;
+    margin-right: 12px;
+  }
+
+  &__job-title {
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  &__job-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+
+  &__company {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  &__add-another {
+    display: flex;
+  }
+
+  &__no-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &-icon {
+      position: relative;
+      top: -30px;
+      align-self: center;
+    }
+
+    &-title {
+      font-family: $monserrat;
+      margin-bottom: 14px;
+      font-size: 18px;
+      line-height: 26px;
+      color: $gray;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    &-checkbox {
+      display: flex;
+
+      &-title {
+        font-family: $monserrat;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 22px;
+        color: $gray;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__bottom {
+    padding-right: 28px;
+  }
+}

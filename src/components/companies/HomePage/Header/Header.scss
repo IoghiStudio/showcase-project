@@ -1,0 +1,156 @@
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.h {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;;
+  padding: 32px;
+
+  @include onTablet {
+    justify-content: start;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 36px;
+  }
+
+  &__logo {
+    align-self: flex-end;
+    position: absolute;
+    top: 38px;
+    margin-right: 10px;
+    height: 32px;
+    width: 172px;
+
+    @include onTablet {
+      align-self: center;
+      margin: 0;
+      height: 48px;
+      width: 258px;
+    }
+
+    @include onLaptop {
+      height: 36px;
+      width: 194px;
+    }
+
+    background-image: url('../../../../media/logos/logo.png');
+    @include icon;
+    background-size: cover;
+
+    &--color {
+      width: 182px;
+      height: 28px;
+      background-image: url('../../../../media/logos/logo-color.svg');
+
+      @include onTablet {
+        height: 40px;
+      }
+
+      @include onLaptop {
+        height: 30px;
+        width: 194px;
+      }
+    }
+  }
+
+  &__menu {
+    width: 28px;
+    height: 21px;
+    background-image: url('../../../../media/icons/menu_icon-white.svg');
+    @include icon;
+    background-size: cover;
+    cursor: pointer;
+
+    @include onTablet {
+      width: 26px;
+      height: 20px;
+    }
+
+    &--black {
+      background-image: url('../../../../media/icons/menu_icon-black.svg');
+    }
+  }
+
+  &__right {
+    display: none;
+    width: 340px;
+
+    @include onLaptop {
+      display: flex;
+    }
+  }
+
+  &__sign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 73px;
+    margin-right: 18px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 28px;
+    cursor: pointer;
+
+    &--black {
+      color: $black;
+    }
+
+    &--up {
+      margin-right: 31px;
+      width: 109px;
+      height: 36px;
+      background-color: #fff;
+      border-radius: 20px;
+      color: $black;
+    }
+
+    &--blue {
+      background-color: $blue;
+      color: #fff;
+    }
+  }
+
+  &__language {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 109px;
+    height: 36px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    color: #fff;
+
+    &--black {
+      border-color: $black;
+      color: $black;
+    }
+
+    &-text {
+      width: 90px;
+      font-size: 14px;
+      line-height: 28px;
+      text-align: center;
+    }
+
+    &-icon {
+      position: absolute;
+      left: 80px;
+      width: 10px;
+      height: 5px;
+      background-image: url('../../../../media/icons/arrow-down-white.svg');
+      @include icon;
+      background-size: cover;
+
+      &--black {
+        background-image: url('../../../../media/icons/arrow-down-black.svg');
+      }
+    }
+  }
+
+}
